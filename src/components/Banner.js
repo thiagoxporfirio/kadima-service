@@ -1,116 +1,111 @@
 import React from "react";
-import { FaGithub, FaYoutube, FaLinkedin } from "react-icons/fa";
-import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-scroll";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Banner = () => {
+	const sliderSettings = {
+		dots: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 5000
+	};
+
 	return (
-		<section
-			className="min-h-[85vh] lg:min-h-[78vh] flex items-center: "
-			id="home"
-		>
-			<div className="container mx-auto">
-				<div className="flex felx-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
-					{/* txt */}
-					<div className="flex-1 text-center font-secondary lg:text-left mt-8">
-						<motion.h1
-							variants={fadeIn("up", 0.3)}
-							initial="hidden"
-							whileInView={"show"}
-							viewport={{ once: false, amount: 0.7 }}
-							className="text-[55px] font-bold leading-[0.8] lg:text-[110px] "
-						>
-							THIAGO <span>PORFIRIO</span>
-						</motion.h1>
-						<motion.div
-							variants={fadeIn("up", 0.3)}
-							initial="hidden"
-							whileInView={"show"}
-							viewport={{ once: false, amount: 0.7 }}
-							className="mb-6 text-[36px] lg:text-[60px] font-secondary 
-              font-semibold uppercase leading-[1]"
-						>
-							<span className=" text-white mr-4">Eu sou um</span>
-							<TypeAnimation
-								sequence={[
-									"Desenvolvedor Front-end",
-									2000,
-									"Desenvolvedor Back-end",
-									2000,
-									"Streamer",
-									2000
-								]}
-								speed={50}
-								className="text-accent"
-								wrapper="span"
-								repeat={Infinity}
-							/>
-						</motion.div>
-						<motion.p
-							className=" mb-8 max-w-lg mx-auto lg:mx-0"
-							variants={fadeIn("up", 0.3)}
-							initial="hidden"
-							whileInView={"show"}
-							viewport={{ once: false, amount: 0.7 }}
-						>
-							Engenheiro de Software com duas graduações e uma profunda paixão
-							pelo que faço. Com um foco em desenvolvimento Fullstack, tenho
-							aprimorado minhas habilidades em tecnologias chave, incluindo
-							React, TypeScript e NodeJS. Através de uma abordagem autodidata,
-							habilitando-me a criar soluções eficazes e de alto impacto no
-							universo do desenvolvimento de software.
-						</motion.p>
-						<motion.div
-							variants={fadeIn("up", 0.3)}
-							initial="hidden"
-							whileInView={"show"}
-							viewport={{ once: false, amount: 0.7 }}
-							className="flex max-w-max gap-x-6 items-center mb-12
-            mx-auto lg:mx-0 "
-						>
-							<button className="btn btn-lg">
-								<Link
-									to="contact"
-									activeClass="active"
-									smooth={true}
-									spy={true}
-								>
-									Contato
-								</Link>
-							</button>
-							<a href="#" className="text-gradient btn-link">
-								Meu Portifolio
-							</a>
-						</motion.div>
-						<motion.div
-							variants={fadeIn("up", 0.3)}
-							initial="hidden"
-							whileInView={"show"}
-							viewport={{ once: false, amount: 0.7 }}
-							className="flex text-[2] gap-x-6 max-w-max mx-auto
-                lg:mx-0"
-						>
-							<a href="https://github.com/thiagoxporfirio">
-								<FaGithub />
-							</a>
-							<a href="#">
-								<FaYoutube />
-							</a>
-							<a href="https://www.linkedin.com/in/thiagoxporfirio/">
-								<FaLinkedin />
-							</a>
-						</motion.div>
+		<section className="flex flex-col" id="home">
+			{/* Carousel Section */}
+			<div className="relative h-[85vh]">
+				<Slider {...sliderSettings}>
+					<div>
+						<img
+							src="https://placehold.co/1920x1080/1a1a1a/white?text=Industrial+Automation"
+							alt="Industrial Automation"
+							className="w-full h-[85vh] object-cover"
+						/>
 					</div>
-					{/* image */}
-					<motion.div
-						variants={fadeIn("down", 0.5)}
+					<div>
+						<img
+							src="https://placehold.co/1920x1080/1a1a1a/white?text=Electrical+Engineering"
+							alt="Electrical Engineering"
+							className="w-full h-[85vh] object-cover"
+						/>
+					</div>
+					<div>
+						<img
+							src="https://placehold.co/1920x1080/1a1a1a/white?text=Control+Systems"
+							alt="Control Systems"
+							className="w-full h-[85vh] object-cover"
+						/>
+					</div>
+				</Slider>
+			</div>
+
+			{/* Content Section - Now below carousel */}
+			<div className="container mx-auto py-20">
+				<div className="flex flex-col items-center justify-center text-center">
+					<motion.h1
+						variants={fadeIn("up", 0.3)}
 						initial="hidden"
 						whileInView={"show"}
-						className="hidden lg:flex felx-1 max-w-[320px] lg:max-w-[482px] "
+						viewport={{ once: false, amount: 0.7 }}
+						className="text-[45px] font-bold leading-[0.8] lg:text-[90px] text-black"
 					>
-						<img className="" alt="" />
+						KADIMA <span className="text-accent">SERVICE</span>
+					</motion.h1>
+
+					<motion.div
+						variants={fadeIn("up", 0.3)}
+						initial="hidden"
+						whileInView={"show"}
+						viewport={{ once: false, amount: 0.7 }}
+						className="mb-6 text-[30px] lg:text-[50px] font-secondary 
+                        font-semibold uppercase leading-[1.2] mt-8"
+					>
+						<span className="text-black mr-4">Especialistas em</span>
+						<TypeAnimation
+							sequence={[
+								"Automação Industrial",
+								2000,
+								"Engenharia Elétrica",
+								2000,
+								"Sistemas de Controle",
+								2000,
+								"Projetos Elétricos",
+								2000
+							]}
+							speed={50}
+							className="text-accent"
+							wrapper="span"
+							repeat={Infinity}
+						/>
+					</motion.div>
+
+					<motion.div
+						variants={fadeIn("up", 0.6)}
+						initial="hidden"
+						whileInView={"show"}
+						viewport={{ once: false, amount: 0.7 }}
+						className="flex gap-x-6 items-center justify-center mt-8"
+					>
+						<button className="btn btn-lg">
+							<Link to="contact" activeClass="active" smooth={true}>
+								Solicite um Orçamento
+							</Link>
+						</button>
+						<Link
+							to="services"
+							className="text-gradient btn-link"
+							smooth={true}
+						>
+							Nossos Serviços
+						</Link>
 					</motion.div>
 				</div>
 			</div>

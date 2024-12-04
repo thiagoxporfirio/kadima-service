@@ -1,48 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .btn {
-	background: linear-gradient(
-		92.23deg,
-		#6226b6 21.43%,
-		#b936ee 50.63%,
-		#3bace2 100%,
-		#406aff 117.04%
-	);
-	box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51);
+  background: linear-gradient(
+    92.23deg,
+    #CC0000 21.43%,     /* Darker Red */
+    #FF0000 50.63%,     /* Bright Red */
+    #FF3333 100%        /* Lighter Red */
+  );
+  box-shadow: 0px 4.42184px 107.23px rgba(204, 0, 0, 0.3);
 }
 
 .btn:hover {
-	background: linear-gradient(
-		92.23deg,
-		#406aff 21.43%,
-		#3bace2 50.63%,
-		#b936ee 100%,
-		#ff56f6 117.04%
-	);
+  background: linear-gradient(
+    92.23deg,
+    #FF3333 21.43%,     /* Lighter Red */
+    #FF0000 50.63%,     /* Bright Red */
+    #CC0000 100%        /* Darker Red */
+  );
 }
 
 .gradient,
 .active {
-	background: linear-gradient(
-		92.23deg,
-		#406aff 21.43%,
-		#6226b6 50.63%,
-		#b936ee 100%,
-		#ff56f6 117.04%
-	);
+  background: linear-gradient(
+    92.23deg,
+    #990000 21.43%,     /* Very Dark Red */
+    #FF0000 50.63%,     /* Bright Red */
+    #CC0000 100%        /* Darker Red */
+  );
 }
 
 .active {
-	color: #fff;
-	padding: 1rem;
-	border-radius: 100%;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 100%;
 }
 
 @layer base {
 	body {
-		@apply font-secondary text-lg leading-8 text-white;
+		@apply font-secondary text-lg leading-8 text-black;  /* Changed from text-text-dark to text-black */
 	}
 	.h2 {
 		@apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
@@ -63,7 +61,7 @@
 		@apply text-base;
 	}
 	.text-gradient {
-		@apply bg-gradient-to-r text-transparent bg-clip-text from-[#42A6E3] to-[#FF56F6] font-bold font-primary hover:from-[#FF56F6] hover:to-[#42A6E3];
+		@apply bg-gradient-to-r text-transparent bg-clip-text from-[#990000] to-[#FF0000] font-bold font-primary hover:from-[#FF0000] hover:to-[#990000];
 	}
 	.section {
 		@apply py-8 lg:py-24 lg:h-screen flex items-center;

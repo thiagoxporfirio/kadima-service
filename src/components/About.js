@@ -21,9 +21,14 @@ const About = () => {
 						initial="hidden"
 						whileInView={"show"}
 						viewport={{ once: false, amount: 0.3 }}
-						className="flex-1 bg-about bg-contain bg-no-repeat h-[640px]
-          				mix-blend-lighten bg-top"
-					></motion.div>
+						className="flex-1 flex items-center justify-center"
+					>
+						<img 
+							src="https://placehold.co/600x400/1a1a1a/white?text=Kadima+Service" 
+							alt="Kadima Service Placeholder"
+							className="rounded-lg shadow-xl"
+						/>
+					</motion.div>
 					{/* txt */}
 					<motion.div
 						variants={fadeIn("left", 0.5)}
@@ -32,47 +37,44 @@ const About = () => {
 						viewport={{ once: false, amount: 0.3 }}
 						className="flex-1"
 					>
-						<h2 className="h2 text-accent">Sobre mim.</h2>
+						<h2 className="h2 text-accent">Quem Somos</h2>
 						<h3 className="h3 mb-4">
-							{" "}
-							Um Entusiasta Curioso e Apaixonado pela Vida{" "}
-						</h3>{" "}
-						<p className="mb-6 ">
-							{" "}
-							Sou apaixonado por explorar o mundo e estou sempre em busca de
-							novas experiências. Adoro viajar, conhecer culturas diferentes e
-							experimentar comidas típicas dos lugares que visito. Além disso,
-							sou um grande admirador de carros esportivos, apreciando a beleza
-							e a potência dessas máquinas. Tenho um carinho especial pelos
-							animais e me conecto profundamente com a natureza. Essa combinação
-							de interesses reflete minha personalidade curiosa, expansiva e
-							cheia de energia.{" "}
+							Excelência em Engenharia Elétrica e Automação
+						</h3>
+						<p className="mb-6">
+							A Kadima Service foi fundada com a missão de otimizar os serviços de 
+							engenharia no norte e nordeste do Brasil. Com sede na Bahia, contamos 
+							com uma infraestrutura moderna, incluindo um galpão de mais de 500m² 
+							dedicado à montagem de painéis e ao desenvolvimento de soluções 
+							industriais, comerciais e prediais nas áreas elétrica e de automação. 
+							Nossa equipe é formada por engenheiros altamente especializados e 
+							capacitados, com mais de 15 anos de experiência no setor.
 						</p>
-						<div className="flex gap-x-6 lg:gap-x-10 mb-12 ">
+						<div className="flex gap-x-6 lg:gap-x-10 mb-12">
 							<div>
 								<div className="text-[40px] font-tertiary text-gradient mb-2">
-									{inView ? <CountUp start={0} end={4} duration={6} /> : null}
+									{inView ? <CountUp start={0} end={15} duration={6} /> : null}+
 								</div>
-								<div className="font-primary text-sm tracking-[2px] ">
+								<div className="font-primary text-sm tracking-[2px]">
 									Anos de <br />
-									Experiencia
+									Experiência
 								</div>
 							</div>
 							<div>
 								<div className="text-[40px] font-tertiary text-gradient mb-2">
-									{inView ? <CountUp start={0} end={15} duration={8} /> : null}
-									K+
+									{inView ? <CountUp start={0} end={500} duration={8} /> : null}
+									m²
 								</div>
-								<div className="font-primary text-sm tracking-[2px] ">
-									Views em <br />
-									Projetos
+								<div className="font-primary text-sm tracking-[2px]">
+									de Área <br />
+									Industrial
 								</div>
 							</div>
 							<div>
 								<div className="text-[40px] font-tertiary text-gradient mb-2">
-									{inView ? <CountUp start={0} end={12} duration={6} /> : null}
+									{inView ? <CountUp start={0} end={100} duration={6} /> : null}+
 								</div>
-								<div className="font-primary text-sm tracking-[2px] ">
+								<div className="font-primary text-sm tracking-[2px]">
 									Projetos <br />
 									Realizados
 								</div>
@@ -80,12 +82,12 @@ const About = () => {
 						</div>
 						<div className="flex gap-x-8 items-center mt-9">
 							<button className="btn btn-lg">
-								<Link to="contact" activeClass="active ">
+								<Link to="contact" activeClass="active">
 									Entre em contato
 								</Link>
 							</button>
 							<a href="#" className="text-gradient btn-link">
-								Meu Portifolio
+								Nossos Projetos
 							</a>
 						</div>
 					</motion.div>

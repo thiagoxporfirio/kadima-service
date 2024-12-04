@@ -2,9 +2,9 @@ module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		fontFamily: {
-			primary: "Orbitron",
-			secondary: "Rajdhani",
-			tertiary: "Aldrich"
+			primary: "'Titillium Web', sans-serif",    // Modern, professional, technical feel
+			secondary: "'Source Sans Pro', sans-serif", // Clean, readable
+			tertiary: "'Roboto Condensed', sans-serif" // Great for numbers and technical data
 		},
 		container: {
 			padding: {
@@ -20,12 +20,17 @@ module.exports = {
 		extend: {
 			colors: {
 				primary: "#0a0a0a",
-				accent: "#B809C3"
+				accent: "#FF0000",        // Main red
+				'accent-dark': '#CC0000', // Darker red
+				'text-dark': '#000000',   // Black for text
 			},
 			backgroundImage: {
 				site: "url('./assets/site-bg.jpg')",
 				// about: "url('./assets/about.png')"
 				// services: "url('./assets/services.png')"
+			},
+			backdropBlur: {
+				sm: '4px',
 			}
 		}
 	},

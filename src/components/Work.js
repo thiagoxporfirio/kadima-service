@@ -15,6 +15,7 @@ const Work = () => {
 						className="flex-1"
 					>
 						<h2 className="h2 text-accent mb-8">Projetos Recentes</h2>
+
 						<h3 className="h3 mb-4">GEL - Complexo Eólico Coxilha Negra</h3>
 						<img 
 							src="https://placehold.co/600x400/1a1a1a/white?text=Complexo+Eólico+Coxilha+Negra" 
@@ -26,17 +27,7 @@ const Work = () => {
 							<li>Construção</li>
 							<li>Comissionamento</li>
 						</ul>
-						<h3 className="h3 mb-4">Consórcio GEL-COSAMPA</h3>
-						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Consórcio+GEL-COSAMPA" 
-							alt="Consórcio GEL-COSAMPA"
-							className="rounded-lg shadow-xl mb-4"
-						/>
-						<ul className="list-disc list-inside mb-6">
-							<li>Construção da RMT 34,5kV</li>
-							<li>Comissionamento</li>
-							<li>Comunicação da rede óptica</li>
-						</ul>
+						
 						<h3 className="h3 mb-4">Projetos ENGESP - Linhas de Distribuição CEMIG</h3>
 						<img 
 							src="https://placehold.co/600x400/1a1a1a/white?text=Linhas+de+Distribuição+CEMIG" 
@@ -100,15 +91,6 @@ const Work = () => {
 						/>
 						<ul className="list-disc list-inside mb-6">
 							<li>Construção da RMT, na Bahia em 2020 e 2021.</li>
-						</ul>
-						<h3 className="h3 mb-4">Complexo Eólico Ourolândia, BA</h3>
-						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Complexo+Eólico+Ourolândia" 
-							alt="Complexo Eólico Ourolândia"
-							className="rounded-lg shadow-xl mb-4"
-						/>
-						<ul className="list-disc list-inside mb-6">
-							<li>Ensaios em cabos MT e chaves seccionadoras para Rio Energi em 2018.</li>
 						</ul>
 						<h3 className="h3 mb-4">Complexo Eólico Umburanas, BA</h3>
 						<img 

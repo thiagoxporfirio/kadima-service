@@ -46,15 +46,12 @@ const Header = () => {
 								</Link>
 							</li>
 							<li>
-								<Link
-									to="equipment"
-									activeClass="active"
-									smooth={true}
-									spy={true}
+								<a
+									href="/equipament"
 									className="hover:text-accent transition duration-300 cursor-pointer"
 								>
 									Equipamentos
-								</Link>
+								</a>
 							</li>
 							<li>
 								<Link

@@ -16,7 +16,7 @@ const Contact = () => {
 	const form = useRef();
 
 	return (
-		<section className="section py-16 lg:selection" id="contact">
+		<section className="section mt-[100px] py-16 lg:selection" id="contact">
 			<div className="container mx-auto">
 				<div className="flex flex-col lg:flex-row">
 					{/* text */}
@@ -25,7 +25,7 @@ const Contact = () => {
 						initial="hidden"
 						whileInView={"show"}
 						viewport={{ once: false, amount: 0.3 }}
-						className="flex-1 flex justify-start items-center"
+						className="flex-1 flex justify-start items-center z-30"
 					>
 						<div>
 							<h4 className="text-x1 uppercase text-accent font-medium mb-2 tracking-wide">
@@ -45,7 +45,7 @@ const Contact = () => {
 						initial="hidden"
 						whileInView={"show"}
 						viewport={{ once: false, amount: 0.3 }}
-						className="flex-1 bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl flex flex-col gap-y-6 p-8 hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300"
+						className="flex-1 bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl flex flex-col gap-y-6 p-8 hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 z-30"
 					>
 						<div className="space-y-8">
 							{/* Localização */}
@@ -54,9 +54,9 @@ const Contact = () => {
 									<FaMapMarkerAlt /> Onde estamos
 								</h4>
 								<div className="pl-7 space-y-1 text-white/80">
-									<p>Rua do Areal, 12</p>
-									<p>Vila de Abrantes - Camaçari - BA</p>
-									<p>CEP: 42827-490</p>
+									<p>Rua Simão Pedro de Lisboa, 105</p>
+									<p>Jardim Primavera</p>
+									<p>Barrinha - SP</p>
 								</div>
 							</div>
 
@@ -66,8 +66,10 @@ const Contact = () => {
 									<FaClock /> Atendimento
 								</h4>
 								<div className="pl-7 space-y-1 text-white/80">
-									<p>Segunda à Sexta</p>
-									<p>Das 8h às 18h</p>
+									<p>Segunda à Quinta</p>
+									<p>Das 7h às 17h</p>
+									<p>Sexta</p>
+									<p>Das 7h às 16h</p>
 								</div>
 							</div>
 
@@ -78,23 +80,32 @@ const Contact = () => {
 								</h4>
 								<div className="pl-7 space-y-3">
 									<p className="flex items-center gap-2 text-white/80">
-										<FaPhone className="text-accent" /> (71) 3838-9546
+										<FaPhone className="text-accent" /> Luiz Henrique - +55 42 9994-4224
 									</p>
 									<p className="flex items-center gap-2 text-white/80">
-										<FaWhatsapp className="text-accent" /> (71) 99914-3881
+										<FaWhatsapp className="text-accent" /> Vivian Araujo - +55 34 9915-3060
 									</p>
 									<p className="flex items-center gap-2 text-white/80">
 										<FaEnvelope className="text-accent" />
 										<a
-											href="mailto:kadima-service@pix.eng.br"
+											href="mailto:wilza@kadima.eng.br"
 											className="hover:text-accent underline transition-colors duration-300"
 										>
-											kadima-service@pix.eng.br
+											wilza@kadima.eng.br
+										</a>
+									</p>
+									<p className="flex items-center gap-2 text-white/80">
+										<FaEnvelope className="text-accent" />
+										<a
+											href="mailto:luiz.souza@kadima.eng.br"
+											className="hover:text-accent underline transition-colors duration-300"
+										>
+											luiz.souza@kadima.eng.br
 										</a>
 									</p>
 									<div className="flex gap-4 pt-4">
 										<a
-											href="https://linkedin.com/company/kadima"
+											href="https://www.linkedin.com/company/kadima-service/?viewAsMember=true"
 											target="_blank"
 											rel="noopener noreferrer"
 											className="text-2xl text-white/80 hover:text-accent transition-colors duration-300"
@@ -102,7 +113,7 @@ const Contact = () => {
 											<FaLinkedin />
 										</a>
 										<a
-											href="https://facebook.com/kadima"
+											href="https://www.facebook.com/profile.php?id=61566927685820"
 											target="_blank"
 											rel="noopener noreferrer"
 											className="text-2xl text-white/80 hover:text-accent transition-colors duration-300"
@@ -110,7 +121,7 @@ const Contact = () => {
 											<FaFacebook />
 										</a>
 										<a
-											href="https://instagram.com/kadima"
+											href="https://www.instagram.com/kadimaservice/"
 											target="_blank"
 											rel="noopener noreferrer"
 											className="text-2xl text-white/80 hover:text-accent transition-colors duration-300"

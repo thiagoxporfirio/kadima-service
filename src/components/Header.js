@@ -4,11 +4,11 @@ import Logo from "../assets/kdm.png";
 
 const Header = () => {
 	return (
-		<header className="py-8">
+		<header className="py-4">
 			<div className="container mx-auto">
 				<div className="flex justify-between items-center">
 					<a href="#">
-						<img src={Logo} alt="Kadima Service Logo" className="w-[200px]" />
+						<img src={Logo} alt="Kadima Service Logo" className="w-[130px]" />
 					</a>
 					<nav>
 						<ul className="flex space-x-6 text-xl font-medium">

@@ -2,7 +2,6 @@ import React from "react";
 // components
 import Banner from "./components/Banner";
 import Header from "./components/Header";
-import Nav from "./components/Nav";
 import About from "./components/About";
 import Services from "./components/Services";
 import Work from "./components/Work";
@@ -11,7 +10,7 @@ import WhatsAppButton from "./components/WhatsAppButton";
 
 const App = () => {
 	return (
-		<div className="bg-site bg-no-repeat bg-cover overflow-hidden">
+		<div className="bg-site bg-no-repeat bg-cover overflow-x-hidden z-0">
 			<Header />
 			<Banner />
 			<About />
@@ -19,7 +18,6 @@ const App = () => {
 			<Work />
 			<Contact />
 			<WhatsAppButton />
-			<Nav />
 		</div>
 	);
 };

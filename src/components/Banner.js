@@ -21,7 +21,7 @@ const Banner = () => {
 	return (
 		<section className="flex flex-col" id="home">
 			{/* Carousel Section */}
-			<div className="relative h-[85vh]">
+			<div className="relative h-[85vh] cursor-pointer">
 				<Slider {...sliderSettings}>
 					<div>
 						<img
@@ -48,7 +48,7 @@ const Banner = () => {
 			</div>
 
 			{/* Content Section - Now below carousel */}
-			<div className="container mx-auto py-20">
+			<div className="container mx-auto py-20 z-30">
 				<div className="flex flex-col items-center justify-center text-center">
 					<motion.h1
 						variants={fadeIn("up", 0.3)}

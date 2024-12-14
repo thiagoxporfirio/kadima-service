@@ -31,6 +31,7 @@ const Home = () => (
 	<>
 		<TopHeader />
 		<Banner />
+		<Divider />
 		<About />
 		<Services />
 		<Divider />

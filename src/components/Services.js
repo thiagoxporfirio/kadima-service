@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import { Link } from "react-scroll";
 
 const services = [
 	{
@@ -58,7 +59,11 @@ const Services = () => {
 						<h3 className="h3 max-w-[455px] mb-16">
 							Excelência em Engenharia Elétrica e Automação.
 						</h3>
-						<button className="btn btn-lg">Veja nossos projetos</button>
+						<button className="btn btn-lg">
+							<Link to="work" smooth={true} duration={500}>
+								Veja nossos projetos
+							</Link>
+						</button>
 					</motion.div>
 					{/* Services */}
 					<motion.div

@@ -9,6 +9,7 @@ import Work from "./components/Work";
 import Contact from "./components/Contact";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Equipament from "./components/Equipament";
+import Divider from "./components/Divider";
 
 const App = () => {
 	return (
@@ -30,7 +31,9 @@ const Home = () => (
 		<Banner />
 		<About />
 		<Services />
+		<Divider />
 		<Work />
+		<Divider />
 		<Contact />
 	</>
 );

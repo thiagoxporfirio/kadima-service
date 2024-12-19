@@ -11,6 +11,7 @@ import {
 	FaFacebook,
 	FaInstagram
 } from "react-icons/fa";
+import ClientCarousel from "./ClientCarousel";
 
 const Contact = () => {
 	const form = useRef();
@@ -18,6 +19,7 @@ const Contact = () => {
 	return (
 		<section className="section mt-[100px] py-16 lg:selection" id="contact">
 			<div className="container mx-auto">
+			<ClientCarousel />
 				<div className="flex flex-col lg:flex-row">
 					{/* text */}
 					<motion.div

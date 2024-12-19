@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { Link } from "react-scroll";
 import { FaBullseye, FaEye } from "react-icons/fa";
+import kadima from "../assets/kadima.jpeg";
 
 const About = () => {
 	const [ref, inView] = useInView({
@@ -25,7 +26,7 @@ const About = () => {
 						className="flex-1 flex items-center justify-center z-30"
 					>
 						<img
-							src="https://placehold.co/600x400/1a1a1a/white?text=Kadima+Service"
+							src={kadima}
 							alt="Kadima Service Placeholder"
 							className="rounded-lg shadow-xl"
 						/>

@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import pqPenh2 from "../assets/pqPenh2.jpeg";
+import cemig from "../assets/cemig.jpeg";
+import coxilha from "../assets/coxilha.jpeg";
 
 const Work = () => {
 	return (
@@ -18,7 +21,7 @@ const Work = () => {
 
 						<h3 className="h3 mb-4">GEL - Complexo Eólico Coxilha Negra</h3>
 						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Complexo+Eólico+Coxilha+Negra" 
+							src={coxilha}
 							alt="Complexo Eólico Coxilha Negra"
 							className="rounded-lg shadow-xl mb-4"
 						/>
@@ -30,7 +33,7 @@ const Work = () => {
 						
 						<h3 className="h3 mb-4">Projetos ENGESP - Linhas de Distribuição CEMIG</h3>
 						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Linhas+de+Distribuição+CEMIG" 
+							src={cemig}
 							alt="Linhas de Distribuição CEMIG"
 							className="rounded-lg shadow-xl mb-4"
 						/>
@@ -40,7 +43,7 @@ const Work = () => {
 						</ul>
 						<h3 className="h3 mb-4">Parque Eólico Novo Horizonte (PENH), em Novo Horizonte-BA</h3>
 						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Parque+Eólico+Novo+Horizonte" 
+							src={pqPenh2}
 							alt="Parque Eólico Novo Horizonte"
 							className="rounded-lg shadow-xl mb-4"
 						/>
@@ -67,22 +70,14 @@ const Work = () => {
 						</ul>
 						<h3 className="h3 mb-4">Central Fotovoltaica OH Sobrado, Bahia</h3>
 						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Central+Fotovoltaica+OH+Sobrado" 
+							src="https://placehold.co/600x400/1a1a1a/white?text=Central+Fotovoltaica+OH+Sobrado"
 							alt="Central Fotovoltaica OH Sobrado"
 							className="rounded-lg shadow-xl mb-4"
 						/>
 						<ul className="list-disc list-inside mb-6">
 							<li>Ensaios em subestação de parada anual para WEG em 2020.</li>
 						</ul>
-						<h3 className="h3 mb-4">Complexo Eólico Serra do Mel I, RN</h3>
-						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Complexo+Eólico+Serra+do+Mel+I" 
-							alt="Complexo Eólico Serra do Mel I"
-							className="rounded-lg shadow-xl mb-4"
-						/>
-						<ul className="list-disc list-inside mb-6">
-							<li>Engenharia do proprietário no comissionamento de cabos MT para Echoenergia em 2020.</li>
-						</ul>
+						
 						<h3 className="h3 mb-4">Complexo Eólico Delfina da ENEL GREEN POWER</h3>
 						<img 
 							src="https://placehold.co/600x400/1a1a1a/white?text=Complexo+Eólico+Delfina" 

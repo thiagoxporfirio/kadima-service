@@ -6,6 +6,9 @@ import { Link } from "react-scroll";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import init1 from "../assets/init1.jpeg";
+import init2 from "../assets/init2.jpeg";
+import init3 from "../assets/init3.jpeg";
 
 const Banner = () => {
 	const sliderSettings = {
@@ -25,21 +28,21 @@ const Banner = () => {
 				<Slider {...sliderSettings}>
 					<div>
 						<img
-							src="https://placehold.co/1920x1080/1a1a1a/white?text=Industrial+Automation"
+							src={init1}
 							alt="Industrial Automation"
 							className="w-full h-[85vh] object-cover"
 						/>
 					</div>
 					<div>
 						<img
-							src="https://placehold.co/1920x1080/1a1a1a/white?text=Electrical+Engineering"
+							src={init2}
 							alt="Electrical Engineering"
 							className="w-full h-[85vh] object-cover"
 						/>
 					</div>
 					<div>
 						<img
-							src="https://placehold.co/1920x1080/1a1a1a/white?text=Control+Systems"
+							src={init3}
 							alt="Control Systems"
 							className="w-full h-[85vh] object-cover"
 						/>

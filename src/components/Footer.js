@@ -1,8 +1,5 @@
 import React from "react";
-import {
-	FaLinkedin,
-	FaFacebook
-} from "react-icons/fa";
+import { FaLinkedin, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
 	return (
@@ -10,8 +7,15 @@ const Footer = () => {
 			<div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 				<div>
 					<h4 className="font-bold mb-2 text-accent">CONTATO</h4>
-					<p>support@certopelocerto.com</p>
 					<div className="flex space-x-4 mt-4">
+						<a
+							href="https://www.linkedin.com/company/kadima-service/?viewAsMember=true"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-accent"
+						>
+							<FaWhatsapp size={24} />
+						</a>
 						<a
 							href="https://www.linkedin.com/company/kadima-service/?viewAsMember=true"
 							target="_blank"
@@ -54,8 +58,8 @@ const Footer = () => {
 
 				<div>
 					<h4 className="font-bold mb-2 text-accent">CONTATO</h4>
-					<p>Telefone: Luiz Henrique - +55 42 9994-4224</p>
-					<p>WhatsApp: Vivian Araujo - +55 34 9915-3060</p>
+					<p>Luiz Henrique: +55 42 9994-4224</p>
+					<p>Vivian Araujo: +55 34 9915-3060</p>
 					<p>
 						Email:{" "}
 						<a href="mailto:wilza@kadima.eng.br" className="hover:text-accent">

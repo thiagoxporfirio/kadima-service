@@ -11,7 +11,6 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import Equipament from "./components/Equipament";
 import Divider from "./components/Divider";
 import TopHeader from "./components/TopHeader";
-import ClientCarousel from "./components/ClientCarousel";
 
 const App = () => {
 	return (

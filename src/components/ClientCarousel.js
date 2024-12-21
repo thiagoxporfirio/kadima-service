@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import client1 from "../assets/celesc.png";
 import client2 from "../assets/CEMIG.png";
 import client3 from "../assets/cosampa.png";
-import client4 from "../assets/cymi.jpeg";
+import client4 from "../assets/cymi.png";
 import client5 from "../assets/enel.png";
 import client6 from "../assets/engie.png";
 import client7 from "../assets/HNclyPTQavjVcJxhkWbDvJpSKRhQUIylEtXAHrAgIvmxsCshxlRimaiYwbjNXtQO.png";

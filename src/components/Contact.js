@@ -20,7 +20,7 @@ const Contact = () => {
 		<section className="section mt-[100px] py-16 lg:selection" id="contact">
 			<div className="container mx-auto">
 			<ClientCarousel />
-				<div className="flex flex-col lg:flex-row">
+				<div className="flex flex-col lg:flex-row mb-[50px]">
 					{/* text */}
 					<motion.div
 						variants={fadeIn("right", 0.3)}

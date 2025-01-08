@@ -6,9 +6,9 @@ import { Link } from "react-scroll";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import init1 from "../assets/init1.jpeg";
-import init2 from "../assets/init2.jpeg";
-import init3 from "../assets/init3.jpeg";
+import init1 from "../assets/init1.jpg";
+import init2 from "../assets/init2.jpg";
+import init3 from "../assets/init3.jpg";
 
 const Banner = () => {
 	const sliderSettings = {

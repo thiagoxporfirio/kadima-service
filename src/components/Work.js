@@ -4,6 +4,7 @@ import { fadeIn } from "../variants";
 import pqPenh2 from "../assets/pqPenh2.jpeg";
 import cemig from "../assets/cemig.jpeg";
 import coxilha from "../assets/coxilha.jpeg";
+import mel from "../assets/mel.jpeg";
 
 const Work = () => {
 	return (
@@ -41,16 +42,7 @@ const Work = () => {
 							<li>Execução</li>
 							<li>Comissionamento das LD´s da Cemig</li>
 						</ul>
-						<h3 className="h3 mb-4">Parque Eólico Novo Horizonte (PENH), em Novo Horizonte-BA</h3>
-						<img 
-							src={pqPenh2}
-							alt="Parque Eólico Novo Horizonte"
-							className="rounded-lg shadow-xl mb-4"
-						/>
-						<ul className="list-disc list-inside mb-6">
-							<li>Execução</li>
-							<li>Comissionamento da comunicação da rede óptica</li>
-						</ul>
+						
 					</motion.div>
 					<motion.div
 						variants={fadeIn("right", 0.5)}
@@ -61,41 +53,23 @@ const Work = () => {
 					>
 						<h3 className="h3 mb-4">Complexo Eólico Serra do Mel I, RN</h3>
 						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Complexo+Eólico+Serra+do+Mel+I" 
+							src={mel} 
 							alt="Complexo Eólico Serra do Mel I"
 							className="rounded-lg shadow-xl mb-4"
 						/>
 						<ul className="list-disc list-inside mb-6">
 							<li>Ensaios de descargas parciais em 2020.</li>
 						</ul>
-						<h3 className="h3 mb-4">Central Fotovoltaica OH Sobrado, Bahia</h3>
+
+						<h3 className="h3 mb-4">Parque Eólico Novo Horizonte (PENH), em Novo Horizonte-BA</h3>
 						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Central+Fotovoltaica+OH+Sobrado"
-							alt="Central Fotovoltaica OH Sobrado"
+							src={pqPenh2}
+							alt="Parque Eólico Novo Horizonte"
 							className="rounded-lg shadow-xl mb-4"
 						/>
 						<ul className="list-disc list-inside mb-6">
-							<li>Ensaios em subestação de parada anual para WEG em 2020.</li>
-						</ul>
-						
-						<h3 className="h3 mb-4">Complexo Eólico Delfina da ENEL GREEN POWER</h3>
-						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Complexo+Eólico+Delfina" 
-							alt="Complexo Eólico Delfina"
-							className="rounded-lg shadow-xl mb-4"
-						/>
-						<ul className="list-disc list-inside mb-6">
-							<li>Construção da RMT, na Bahia em 2020 e 2021.</li>
-						</ul>
-						<h3 className="h3 mb-4">Complexo Eólico Umburanas, BA</h3>
-						<img 
-							src="https://placehold.co/600x400/1a1a1a/white?text=Complexo+Eólico+Umburanas" 
-							alt="Complexo Eólico Umburanas"
-							className="rounded-lg shadow-xl mb-4"
-						/>
-						<ul className="list-disc list-inside mb-6">
-							<li>Ensaios em cabos MT e chaves seccionadoras para ENGIE em 2018.</li>
-							<li>Lançamento de cabos dielétricos, fusão e enlace da rede de comunicação.</li>
+							<li>Execução</li>
+							<li>Comissionamento da comunicação da rede óptica</li>
 						</ul>
 					</motion.div>
 				</div>

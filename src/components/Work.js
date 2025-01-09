@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import pqPenh2 from "../assets/pqPenh2.jpeg";
-import cemig from "../assets/cemig.jpeg";
+import serv from "../assets/serv.jpeg";
 import coxilha from "../assets/coxilha.jpeg";
 import mel from "../assets/mel.jpeg";
 
@@ -34,7 +34,7 @@ const Work = () => {
 						
 						<h3 className="h3 mb-4">Projetos ENGESP - Linhas de Distribuição CEMIG</h3>
 						<img 
-							src={cemig}
+							src={serv}
 							alt="Linhas de Distribuição CEMIG"
 							className="rounded-lg shadow-xl mb-4"
 						/>

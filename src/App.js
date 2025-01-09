@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch, useLocation } from "react-router-dom";
 // components
 import Banner from "./components/Banner";
 import Header from "./components/Header";
@@ -27,18 +27,31 @@ const App = () => {
 	);
 };
 
-const Home = () => (
-	<>
-		<TopHeader />
-		<Banner />
-		<Divider />
-		<About />
-		<Services />
-		<Divider />
-		<Work />
-		<Divider />
-		<Contact />
-	</>
-);
+const Home = () => {
+	const location = useLocation();
+
+	useEffect(() => {
+		if (location.state?.section) {
+			const element = document.getElementById(location.state.section);
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+			}
+		}
+	}, [location]);
+
+	return (
+		<>
+			<TopHeader />
+			<Banner />
+			<Divider />
+			<About />
+			<Services />
+			<Divider />
+			<Work />
+			<Divider />
+			<Contact />
+		</>
+	);
+};
 
 export default App;

@@ -1,0 +1,15 @@
+{
+  "extends": ["react-app"],
+  "rules": {
+    "no-source-maps": "off"
+  },
+  "ignorePatterns": ["**/node_modules/**"],
+  "overrides": [
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "source-map-loader/no-source-maps": "off"
+      }
+    }
+  ]
+}

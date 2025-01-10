@@ -5,15 +5,18 @@ import vlf from "../assets/vlf.png";
 import dp from "../assets/dp.png";
 import shirla from "../assets/shirla.webp";
 import metrel from "../assets/metrel.png";
-import van from "../assets/van.jpeg"; // Add this import
+import van from "../assets/van.jpeg";
+import carro from "../assets/carro.jpeg";
+import munk from "../assets/munk.png";
 
 const Equipament = () => {
 	return (
 		<>
-			<section className="section">
+			{/* Equipment Section */}
+			<section className="section mb-16">
 				<div className="container mx-auto">
 					<h2 className="h2 text-accent">Equipamentos</h2>
-					<p className="paragraph">Equipamentos de medição</p>
+					<p className="paragraph mb-8">Equipamentos de medição</p>
 
 					<div className="equipamentos__cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 						<div className="equipamentos__card border rounded-lg p-4 shadow-lg flex flex-col">
@@ -159,29 +162,94 @@ const Equipament = () => {
                                 Saiba mais
                             </a>
                         </div>
+					</div>
+				</div>
+			</section>
 
-						<div className="equipamentos__card border rounded-lg p-4 shadow-lg flex flex-col">
-                            <div className="equipamentos__card--image mb-4">
+			{/* Vehicles Section */}
+			<section className="section py-16">
+				<div className="container mx-auto">
+					<h2 className="h2 text-accent mb-8">Veículos</h2>
+					<p className="paragraph mb-8">Veículos disponíveis para o trabalho</p>
+					<div className="veiculos__cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+						<div className="equipamentos__card border rounded-lg p-4 shadow-lg flex flex-col bg-white">
+							<div className="equipamentos__card--image mb-4 h-[250px]">
+								<img
+									src={van}
+									alt="Van da Kadima"
+									className="w-full h-full object-cover rounded-md"
+								/>
+							</div>
+							<div className="equipamentos__card--content flex-grow">
+								<h3 className="text-xl font-semibold mb-2">
+									VAN DA KADIMA - Laboratório Móvel de Comissionamento
+								</h3>
+								<p className="mb-4">
+									Nossa van laboratório é equipada com tecnologia de ponta para realizar 
+									serviços de comissionamento em campo. Oferece mobilidade e eficiência 
+									para testes e análises técnicas, permitindo atendimento ágil e preciso 
+									diretamente no local necessário.
+								</p>
+							</div>
+							<a
+								href="https://api.whatsapp.com/send?phone=5542999944224&amp;text=Ol%C3%A1%2C+encontrei+seu+site+na+busca+do+Google+e+gostaria+de+mais+informa%C3%A7%C3%B5es.+&amp;type=phone_number&amp;app_absent=0"
+								title="Saiba mais sobre Van da Kadima"
+								className="btn btn-lg mt-auto flex text-center justify-center items-center"
+							>
+								Saiba mais
+							</a>
+						</div>
+
+						{/* Car Card */}
+                        <div className="equipamentos__card border rounded-lg p-4 shadow-lg flex flex-col bg-white">
+                            <div className="equipamentos__card--image mb-4 h-[250px]">
                                 <img
-                                    src={van}
-                                    alt="Van da Kadima"
-                                    className="w-full h-auto object-cover rounded-md"
+                                    src={carro}
+                                    alt="Carro da Kadima"
+                                    className="w-full h-full object-cover rounded-md"
                                 />
                             </div>
                             <div className="equipamentos__card--content flex-grow">
                                 <h3 className="text-xl font-semibold mb-2">
-                                    VAN DA KADIMA - Laboratório Móvel de Comissionamento
+                                    CARRO OPERACIONAL
                                 </h3>
                                 <p className="mb-4">
-                                    Nossa van laboratório é equipada com tecnologia de ponta para realizar 
-                                    serviços de comissionamento em campo. Oferece mobilidade e eficiência 
-                                    para testes e análises técnicas, permitindo atendimento ágil e preciso 
-                                    diretamente no local necessário.
+                                    Veículo operacional para deslocamento rápido e eficiente da equipe técnica, 
+                                    proporcionando agilidade no atendimento aos clientes e transporte de equipamentos 
+                                    de menor porte para serviços específicos.
                                 </p>
                             </div>
                             <a
                                 href="https://api.whatsapp.com/send?phone=5542999944224&amp;text=Ol%C3%A1%2C+encontrei+seu+site+na+busca+do+Google+e+gostaria+de+mais+informa%C3%A7%C3%B5es.+&amp;type=phone_number&amp;app_absent=0"
-                                title="Saiba mais sobre Van da Kadima"
+                                title="Saiba mais sobre nosso Carro Operacional"
+                                className="btn btn-lg mt-auto flex text-center justify-center items-center"
+                            >
+                                Saiba mais
+                            </a>
+                        </div>
+
+                        {/* Munk Card */}
+                        <div className="equipamentos__card border rounded-lg p-4 shadow-lg flex flex-col bg-white">
+                            <div className="equipamentos__card--image mb-4 h-[250px]">
+                                <img
+                                    src={munk}
+                                    alt="Caminhão Munk"
+                                    className="w-full h-full object-cover rounded-md"
+                                />
+                            </div>
+                            <div className="equipamentos__card--content flex-grow">
+                                <h3 className="text-xl font-semibold mb-2">
+                                    CAMINHÃO MUNK
+                                </h3>
+                                <p className="mb-4">
+                                    Caminhão equipado com guindaste tipo Munk para operações que necessitam 
+                                    de elevação e movimentação de cargas. Ideal para instalações, manutenções 
+                                    e transporte de equipamentos pesados em campo.
+                                </p>
+                            </div>
+                            <a
+                                href="https://api.whatsapp.com/send?phone=5542999944224&amp;text=Ol%C3%A1%2C+encontrei+seu+site+na+busca+do+Google+e+gostaria+de+mais+informa%C3%A7%C3%B5es.+&amp;type=phone_number&amp;app_absent=0"
+                                title="Saiba mais sobre nosso Caminhão Munk"
                                 className="btn btn-lg mt-auto flex text-center justify-center items-center"
                             >
                                 Saiba mais

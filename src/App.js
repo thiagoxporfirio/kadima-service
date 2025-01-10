@@ -43,12 +43,12 @@ const Home = () => {
 		<>
 			<TopHeader />
 			<Banner />
-			<Divider />
+			{/* <Divider /> */}
 			<About />
 			<Services />
-			<Divider />
+			{/* <Divider /> */}
 			<Work />
-			<Divider />
+			{/* <Divider /> */}
 			<Contact />
 		</>
 	);

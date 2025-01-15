@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import init1 from "../assets/init1.jpg";
-import init2 from "../assets/init2.jpg";
+import init2 from "../assets/init2.jpeg";
 import init3 from "../assets/init3.jpg";
 
 const Banner = () => {
@@ -24,41 +24,41 @@ const Banner = () => {
 	return (
 		<section className="flex flex-col" id="home">
 			{/* Carousel Section */}
-			<div className="relative h-[85vh] cursor-pointer">
+			<div className="relative h-[50vh] sm:h-[65vh] md:h-[75vh] lg:h-[85vh] cursor-pointer">
 				<Slider {...sliderSettings}>
 					<div>
 						<img
 							src={init1}
 							alt="Industrial Automation"
-							className="w-full h-[85vh] object-cover"
+							className="w-full h-[50vh] sm:h-[65vh] md:h-[75vh] lg:h-[85vh] object-cover"
 						/>
 					</div>
 					<div>
 						<img
 							src={init2}
 							alt="Electrical Engineering"
-							className="w-full h-[85vh] object-cover"
+							className="w-full h-[50vh] sm:h-[65vh] md:h-[75vh] lg:h-[85vh] object-cover"
 						/>
 					</div>
 					<div>
 						<img
 							src={init3}
 							alt="Control Systems"
-							className="w-full h-[85vh] object-cover"
+							className="w-full h-[50vh] sm:h-[65vh] md:h-[75vh] lg:h-[85vh] object-cover"
 						/>
 					</div>
 				</Slider>
 			</div>
 
-			{/* Content Section - Now below carousel */}
-			<div className="container mx-auto py-20 z-30">
+			{/* Content Section */}
+			<div className="container mx-auto py-10 md:py-16 lg:py-20 px-4 z-30">
 				<div className="flex flex-col items-center justify-center text-center">
 					<motion.h1
 						variants={fadeIn("up", 0.3)}
 						initial="hidden"
 						whileInView={"show"}
 						viewport={{ once: false, amount: 0.7 }}
-						className="text-[45px] font-bold leading-[0.8] lg:text-[90px] text-black"
+						className="text-[32px] sm:text-[40px] md:text-[60px] lg:text-[90px] font-bold leading-[1] lg:leading-[0.8] text-black"
 					>
 						KADIMA <span className="text-accent">SERVICE</span>
 					</motion.h1>
@@ -68,10 +68,10 @@ const Banner = () => {
 						initial="hidden"
 						whileInView={"show"}
 						viewport={{ once: false, amount: 0.7 }}
-						className="mb-6 text-[30px] lg:text-[50px] font-secondary 
-                        font-semibold uppercase leading-[1.2] mt-8"
+						className="mb-4 md:mb-6 text-[20px] sm:text-[24px] md:text-[35px] lg:text-[50px] font-secondary 
+                        font-semibold uppercase leading-[1.2] mt-4 md:mt-6 lg:mt-8"
 					>
-						<span className="text-black mr-4">Especialistas em</span>
+						<span className="text-black mr-2 md:mr-4">Especialistas em</span>
 						<TypeAnimation
 							sequence={[
 								"Automação Industrial",
@@ -95,16 +95,16 @@ const Banner = () => {
 						initial="hidden"
 						whileInView={"show"}
 						viewport={{ once: false, amount: 0.7 }}
-						className="flex gap-x-6 items-center justify-center mt-8"
+						className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 gap-x-4 md:gap-x-6 items-center justify-center mt-6 md:mt-8"
 					>
-						<button className="btn btn-lg">
+						<button className="btn btn-lg w-full sm:w-auto text-sm md:text-base">
 							<Link to="contact" activeClass="active" smooth={true}>
 								Solicite um Orçamento
 							</Link>
 						</button>
 						<Link
 							to="services"
-							className="text-gradient btn-link"
+							className="text-gradient btn-link text-sm md:text-base"
 							smooth={true}
 						>
 							Nossos Serviços

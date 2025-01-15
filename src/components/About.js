@@ -79,8 +79,8 @@ const About = () => {
 									+
 								</div>
 								<div className="font-primary text-sm tracking-[2px]">
-									Projetos <br />
-									Realizados
+									Obras <br />
+									Realizadas
 								</div>
 							</div>
 						</div>

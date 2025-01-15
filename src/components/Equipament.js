@@ -8,6 +8,8 @@ import metrel from "../assets/metrel.png";
 import van from "../assets/van.jpeg";
 import carro from "../assets/carro.jpeg";
 import munk from "../assets/munk.png";
+import cat from "../assets/cat.webp";
+import caminhaao from "../assets/caminhaao.jpeg";
 
 const Equipament = () => {
 	return (
@@ -22,7 +24,7 @@ const Equipament = () => {
 						<div className="equipamentos__card border rounded-lg p-4 shadow-lg flex flex-col">
 							<div className="equipamentos__card--image mb-4">
 								<img
-									src={delta}
+									src={dp}
 									alt="Tangente Delta"
 									className="w-full h-auto object-cover rounded-md"
 								/>
@@ -250,6 +252,63 @@ const Equipament = () => {
                             <a
                                 href="https://api.whatsapp.com/send?phone=5542999944224&amp;text=Ol%C3%A1%2C+encontrei+seu+site+na+busca+do+Google+e+gostaria+de+mais+informa%C3%A7%C3%B5es.+&amp;type=phone_number&amp;app_absent=0"
                                 title="Saiba mais sobre nosso Caminhão Munk"
+                                className="btn btn-lg mt-auto flex text-center justify-center items-center"
+                            >
+                                Saiba mais
+                            </a>
+                        </div>
+
+                        {/* CAT Card */}
+                        <div className="equipamentos__card border rounded-lg p-4 shadow-lg flex flex-col bg-white">
+                            <div className="equipamentos__card--image mb-4 h-[250px]">
+                                <img
+                                    src={cat}
+                                    alt="Retroescavadeira CAT"
+                                    className="w-full h-full object-cover rounded-md"
+                                />
+                            </div>
+                            <div className="equipamentos__card--content flex-grow">
+                                <h3 className="text-xl font-semibold mb-2">
+                                    RETROESCAVADEIRA CAT
+                                </h3>
+                                <p className="mb-4">
+                                    Retroescavadeira CAT para serviços de escavação e movimentação de terra. 
+                                    Equipamento versátil e robusto, ideal para obras de infraestrutura e 
+                                    preparação de terrenos para instalações elétricas.
+                                </p>
+                            </div>
+                            <a
+                                href="https://api.whatsapp.com/send?phone=5542999944224&amp;text=Ol%C3%A1%2C+encontrei+seu+site+na+busca+do+Google+e+gostaria+de+mais+informa%C3%A7%C3%B5es.+&amp;type=phone_number&amp;app_absent=0"
+                                title="Saiba mais sobre nossa Retroescavadeira"
+                                className="btn btn-lg mt-auto flex text-center justify-center items-center"
+                            >
+                                Saiba mais
+                            </a>
+                        </div>
+
+                        {/* Caminhão Card */}
+                        <div className="equipamentos__card border rounded-lg p-4 shadow-lg flex flex-col bg-white">
+                            <div className="equipamentos__card--image mb-4 h-[250px]">
+                                <img
+                                    src={caminhaao}
+                                    alt="Caminhão com Cesto Elevatório"
+                                    className="w-full h-full object-cover rounded-md"
+                                />
+                            </div>
+                            <div className="equipamentos__card--content flex-grow">
+                                <h3 className="text-xl font-semibold mb-2">
+                                    CAMINHÃO COM CESTO ELEVATÓRIO
+                                </h3>
+                                <p className="mb-4">
+                                    Caminhão equipado com cesto elevatório que proporciona acesso seguro e 
+                                    eficiente para trabalhos em altura. Ideal para manutenção de iluminação 
+                                    pública, redes elétricas e serviços que necessitam alcance vertical com 
+                                    segurança.
+                                </p>
+                            </div>
+                            <a
+                                href="https://api.whatsapp.com/send?phone=5542999944224&amp;text=Ol%C3%A1%2C+encontrei+seu+site+na+busca+do+Google+e+gostaria+de+mais+informa%C3%A7%C3%B5es.+&amp;type=phone_number&amp;app_absent=0"
+                                title="Saiba mais sobre nosso Caminhão com Cesto Elevatório"
                                 className="btn btn-lg mt-auto flex text-center justify-center items-center"
                             >
                                 Saiba mais

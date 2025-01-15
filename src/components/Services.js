@@ -4,7 +4,7 @@ import { fadeIn } from "../variants";
 import { Link } from "react-scroll";
 import sub from "../assets/sub.jpeg";
 import elemanu from "../assets/elemanu.jpg";
-import fibrao from "../assets/fibrao.jpeg";
+import fibrao from "../assets/fibrao2.jpeg";
 import cam from "../assets/cam.jpg";
 import maq from "../assets/maq.jpeg";
 
@@ -43,7 +43,10 @@ const services = [
 
 const Services = () => {
 	return (
-		<section className="section mt-[100px] mb-[80px] min-h-screen" id="services">
+		<section
+			className="section mt-[150px] sm:mt-[80px] md:mt-[100px] mb-[40px] sm:mb-[60px] md:mb-[80px] min-h-screen"
+			id="services"
+		>
 			<div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 				<div className="flex flex-col">
 					{/* Text */}
@@ -52,48 +55,41 @@ const Services = () => {
 						initial="hidden"
 						whileInView={"show"}
 						viewport={{ once: false, amount: 0.3 }}
-						className="flex-1 mb-[80px] z-30 order-1 lg:order-1"
+						className="flex-1 mb-[40px] sm:mb-[60px] md:mb-[80px] z-30 order-1"
 					>
-						<h2 className="h2 text-accent mb-6">Nossos Serviços</h2>
-						<h3 className="h3 max-w-[455px] mb-16">
+						<h2 className="h2 text-accent mb-4 sm:mb-6 text-[28px] sm:text-[32px] md:text-[36px]">
+							Nossos Serviços
+						</h2>
+						<h3 className="h3 max-w-[455px] mb-8 sm:mb-12 md:mb-16 text-[20px] sm:text-[24px]">
 							Excelência em Engenharia Elétrica e Automação.
 						</h3>
-						<button className="btn btn-lg">
+						<button className="btn btn-lg mb-[80px] text-sm sm:text-base">
 							<Link to="work" smooth={true} duration={500}>
 								Veja nossos projetos
 							</Link>
 						</button>
-					</motion.div>
-					{/* Services */}
-					<motion.div
-						variants={fadeIn("left", 0.5)}
-						initial="hidden"
-						whileInView={"show"}
-						viewport={{ once: false, amount: 0.3 }}
-						className="flex-1 z-30 order-2 lg:order-2"
-					>
 						{/* Services list */}
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
 							{services.map((service, index) => {
 								const { name, description, image } = service;
 								return (
 									<div
-										className="border-b border-white/20 mb-[48px] flex flex-col md:flex-row items-start md:items-center"
+										className="border-b border-white/20 mb-[24px] sm:mb-[32px] md:mb-[48px] flex flex-col items-start"
 										key={index}
 									>
-										<div className="md:w-1/2 mb-4 md:mb-0">
-											<h4 className="text-[24px] tracking-wide font-primary font-semibold mb-2 md:mb-4">
+										<div className="w-full mb-4">
+											<h4 className="text-[20px] sm:text-[22px] md:text-[24px] tracking-wide font-primary font-semibold mb-2 md:mb-4">
 												{name}
 											</h4>
-											<p className="font-secondary leading-tight text-lg">
+											<p className="font-secondary leading-tight text-base sm:text-lg">
 												{description}
 											</p>
 										</div>
-										<div className="md:w-1/2">
+										<div className="w-full">
 											<img
 												src={image}
 												alt={name}
-												className="w-full h-[300px] object-cover rounded-md"
+												className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-cover rounded-md"
 											/>
 										</div>
 									</div>

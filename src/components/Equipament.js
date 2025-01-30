@@ -63,14 +63,21 @@ const Equipament = () => {
 							</div>
 							<div className="equipamentos__card--content flex-grow">
 								<h3 className="text-xl font-semibold mb-2">
-									VIOLA - Analisador de qualidade de energia (VLF)
+									Analisador de qualidade de energia (VLF)
 								</h3>
 								<p className="mb-4">
-									O Viola com tecnologia VLF (Very Low Frequency) é um
-									analisador de qualidade de energia que permite medir e
-									analisar parâmetros elétricos como tensão, corrente, potência,
-									harmônicos e fator de potência. Ideal para profissionais que
-									lidam com manutenção em redes elétricas.
+									VLF (Very Low Frequency): Nos ensaios de Tensão Aplicada VLF,
+									submetemos os cabos a tensões elétricas alternadas em 0,1 Hz
+									por períodos pré-determinados. Seja na etapa de
+									comissionamento ou durante a operação, é indispensável
+									garantir os requisitos mínimos de desempenho dos cabos
+									isolados de média tensão, fragilidades e defeitos em cabos
+									isolados podem ocorrer durante o processo construtivo, na
+									instalação e ou na confecção dos acessórios, devido ao
+									envelhecimento natural ou até mesmo às peculiaridades de
+									aplicação. Nesses ensaios, submetemos os isolamentos dos cabos
+									a níveis pré-determinados de sobretensão de operação, por
+									tempo definido, conforme o guia internacional IEEE 400.2-2013.
 								</p>
 							</div>
 							<a
@@ -95,10 +102,15 @@ const Equipament = () => {
 									DESCARGA PARCIAL (DP) e TENSÃO DE RADIOINTERFERÊNCIA (RIV)
 								</h3>
 								<p className="mb-4">
-									Equipamento para medição de descarga parcial (DP) e análise de
-									tensão de radiointerferência (RIV), essencial para detectar e
-									avaliar defeitos em sistemas elétricos de alta tensão,
-									garantindo confiabilidade e segurança nas operações.
+									As Descargas Parciais são pequenas descargas elétricas
+									originadas em cavidades internas de um sistema isolante ou em
+									sua superfície. Sua ocorrência caracteriza uma fragilidade na
+									sustentação dielétrica do material isolante e sua evolução
+									pode ocasionar falhas e danos irreversíveis ao equipamento
+									elétrico. As descargas parciais ocorrem em locais de
+									fragilidade no isolamento do cabo, por exemplo, em
+									arborescências elétricas, emendas, terminações e até mesmo por
+									falhas no processo de fabricação.
 								</p>
 							</div>
 							<a

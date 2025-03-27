@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const WhatsAppButton = () => {
 	const handleWhatsAppClick = () => {
 		window.open(
-			"https://wa.me/1234567890?text=Olá, gostaria de mais informações.",
+			"https://wa.me/5542999944224?text=Olá, gostaria de mais informações sobre os serviços prestados pela Kadima.",
 			"_blank"
 		);
 	};

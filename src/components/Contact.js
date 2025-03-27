@@ -5,10 +5,8 @@ import {
 	FaMapMarkerAlt,
 	FaClock,
 	FaPhone,
-	FaWhatsapp,
 	FaEnvelope,
 	FaLinkedin,
-	FaFacebook,
 	FaInstagram
 } from "react-icons/fa";
 import ClientCarousel from "./ClientCarousel";
@@ -82,56 +80,70 @@ const Contact = () => {
 								</h4>
 								<div className="pl-7 space-y-3">
 									<p className="flex items-center gap-2 text-white/80">
-										<FaPhone className="text-accent" /> Luiz Henrique - +55 42 9994-4224
+										<FaPhone className="text-accent" /> Telefone Geral - +55 42 99156-7356
 									</p>
 									<p className="flex items-center gap-2 text-white/80">
-										<FaWhatsapp className="text-accent" /> Vivian Araujo - +55 34 9915-3060
+										<FaPhone className="text-accent" /> Comercial - +55 42 99994-4224
 									</p>
 									<p className="flex items-center gap-2 text-white/80">
-										<FaEnvelope className="text-accent" />
-										<a
-											href="mailto:wilza@kadima.eng.br"
-											className="hover:text-accent underline transition-colors duration-300"
-										>
-											wilza@kadima.eng.br
-										</a>
+										<FaPhone className="text-accent" /> Ouvidoria - +55 42 99117-8463
 									</p>
-									<p className="flex items-center gap-2 text-white/80">
-										<FaEnvelope className="text-accent" />
-										<a
-											href="mailto:luiz.souza@kadima.eng.br"
-											className="hover:text-accent underline transition-colors duration-300"
-										>
-											luiz.souza@kadima.eng.br
-										</a>
-									</p>
-									<div className="flex gap-4 pt-4">
-										<a
-											href="https://www.linkedin.com/company/kadima-service/?viewAsMember=true"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="text-2xl text-white/80 hover:text-accent transition-colors duration-300"
-										>
-											<FaLinkedin />
-										</a>
-										<a
-											href="https://www.facebook.com/profile.php?id=61566927685820"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="text-2xl text-white/80 hover:text-accent transition-colors duration-300"
-										>
-											<FaFacebook />
-										</a>
-										<a
-											href="https://www.instagram.com/kadimaservice/"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="text-2xl text-white/80 hover:text-accent transition-colors duration-300"
-										>
-											<FaInstagram />
-										</a>
-									</div>
 								</div>
+							</div>
+
+							{/* Emails */}
+							<div className="transform hover:scale-105 transition-all duration-300">
+								<h4 className="text-xl font-medium mb-4 flex items-center gap-2 text-accent">
+									<FaEnvelope /> Emails
+								</h4>
+								<div className="pl-7 space-y-3">
+									<p className="flex items-center gap-2 text-white/80">
+										<FaEnvelope className="text-accent" />
+										<a
+											href="mailto:kadima@kadima.eng.br"
+											className="hover:text-accent underline transition-colors duration-300"
+										>
+											kadima@kadima.eng.br
+										</a>
+									</p>
+									<p className="flex items-center gap-2 text-white/80">
+										<FaEnvelope className="text-accent" />
+										<a
+											href="mailto:ouvidoria@kadima.eng.br"
+											className="hover:text-accent underline transition-colors duration-300"
+										>
+											ouvidoria@kadima.eng.br
+										</a>
+									</p>
+									<p className="flex items-center gap-2 text-white/80">
+										<FaEnvelope className="text-accent" />
+										<a
+											href="mailto:vagas@kadima.eng.br"
+											className="hover:text-accent underline transition-colors duration-300"
+										>
+											vagas@kadima.eng.br
+										</a>
+									</p>
+								</div>
+							</div>
+
+							<div className="flex gap-4 pt-4">
+								<a
+									href="https://www.linkedin.com/company/kadima-service/?viewAsMember=true"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-2xl text-white/80 hover:text-accent transition-colors duration-300"
+								>
+									<FaLinkedin />
+								</a>
+								<a
+									href="https://www.instagram.com/kadimaservice/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-2xl text-white/80 hover:text-accent transition-colors duration-300"
+								>
+									<FaInstagram />
+								</a>
 							</div>
 						</div>
 					</motion.div>

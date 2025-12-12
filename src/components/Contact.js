@@ -17,7 +17,7 @@ const Contact = () => {
 	return (
 		<section className="section mt-[100px] py-16 lg:selection" id="contact">
 			<div className="container mx-auto">
-			<ClientCarousel />
+				<ClientCarousel />
 				<div className="flex flex-col lg:flex-row mb-[50px]">
 					{/* text */}
 					<motion.div
@@ -80,13 +80,16 @@ const Contact = () => {
 								</h4>
 								<div className="pl-7 space-y-3">
 									<p className="flex items-center gap-2 text-white/80">
-										<FaPhone className="text-accent" /> Telefone Geral - +55 42 99156-7356
+										<FaPhone className="text-accent" /> Telefone Geral - +55 42
+										99156-7356
 									</p>
 									<p className="flex items-center gap-2 text-white/80">
-										<FaPhone className="text-accent" /> Comercial - +55 42 99994-4224
+										<FaPhone className="text-accent" /> Comercial - +55 42
+										99994-4224
 									</p>
 									<p className="flex items-center gap-2 text-white/80">
-										<FaPhone className="text-accent" /> Ouvidoria - +55 42 99117-8463
+										<FaPhone className="text-accent" /> Ouvidoria - +55 42
+										99117-8463
 									</p>
 								</div>
 							</div>

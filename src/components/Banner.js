@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+import { fadeIn, viewport } from "../variants";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-scroll";
 import Slider from "react-slick";
@@ -54,20 +54,20 @@ const Banner = () => {
 			<div className="container mx-auto py-10 md:py-16 lg:py-20 px-4 z-30">
 				<div className="flex flex-col items-center justify-center text-center">
 					<motion.h1
-						variants={fadeIn("up", 0.3)}
+						variants={fadeIn("up", 0.1)}
 						initial="hidden"
-						whileInView={"show"}
-						viewport={{ once: false, amount: 0.7 }}
+						whileInView="show"
+						viewport={viewport}
 						className="text-[32px] sm:text-[40px] md:text-[60px] lg:text-[90px] font-bold leading-[1] lg:leading-[0.8] text-black"
 					>
 						KADIMA <span className="text-accent">SERVICE</span>
 					</motion.h1>
 
 					<motion.div
-						variants={fadeIn("up", 0.3)}
+						variants={fadeIn("up", 0.25)}
 						initial="hidden"
-						whileInView={"show"}
-						viewport={{ once: false, amount: 0.7 }}
+						whileInView="show"
+						viewport={viewport}
 						className="mb-4 md:mb-6 text-[20px] sm:text-[24px] md:text-[35px] lg:text-[50px] font-secondary 
                         font-semibold uppercase leading-[1.2] mt-4 md:mt-6 lg:mt-8"
 					>
@@ -91,10 +91,10 @@ const Banner = () => {
 					</motion.div>
 
 					<motion.div
-						variants={fadeIn("up", 0.6)}
+						variants={fadeIn("up", 0.4)}
 						initial="hidden"
-						whileInView={"show"}
-						viewport={{ once: false, amount: 0.7 }}
+						whileInView="show"
+						viewport={viewport}
 						className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 gap-x-4 md:gap-x-6 items-center justify-center mt-6 md:mt-8"
 					>
 						<button className="btn btn-lg w-full sm:w-auto text-sm md:text-base">

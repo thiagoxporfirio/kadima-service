@@ -3,40 +3,40 @@ import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+import { fadeIn, viewport } from "../variants";
 import { Link } from "react-scroll";
 import { FaBullseye, FaEye } from "react-icons/fa";
 import kadima from "../assets/kadima.jpeg";
 
 const About = () => {
 	const [ref, inView] = useInView({
-		threshold: 0.5
+		threshold: 0.3
 	});
 
 	return (
-		<section className="section mb-[120px]" id="about" ref={ref}>
+		<section className="section" id="about" ref={ref}>
 			<div className="container mx-auto">
-				<div className="flex flex-col gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0 h-screen">
+				<div className="flex flex-col gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0">
 					{/* img */}
 					<motion.div
-						variants={fadeIn("rigth", 0.3)}
+						variants={fadeIn("right", 0.1)}
 						initial="hidden"
-						whileInView={"show"}
-						viewport={{ once: false, amount: 0.3 }}
+						whileInView="show"
+						viewport={viewport}
 						className="flex-1 flex items-center justify-center z-30"
 					>
 						<img
 							src={kadima}
 							alt="Kadima Service Placeholder"
-							className="rounded-lg shadow-xl"
+							className="rounded-lg shadow-xl w-full max-w-md lg:max-w-none"
 						/>
 					</motion.div>
 					{/* txt */}
 					<motion.div
-						variants={fadeIn("left", 0.5)}
+						variants={fadeIn("left", 0.25)}
 						initial="hidden"
-						whileInView={"show"}
-						viewport={{ once: false, amount: 0.3 }}
+						whileInView="show"
+						viewport={viewport}
 						className="flex-1 z-30"
 					>
 						<h2 className="h2 text-accent">Quem Somos</h2>

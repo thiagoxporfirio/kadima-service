@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { useHistory, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { headerSlideDown, drawerSlideIn } from "../variants";
 import Logo from "../assets/kdm.png";
 
 const Header = () => {
@@ -36,7 +38,12 @@ const Header = () => {
 	];
 
 	return (
-		<header className="py-4 relative">
+		<motion.header
+			variants={headerSlideDown}
+			initial="hidden"
+			animate="show"
+			className="py-4 relative z-40"
+		>
 			<div className="container mx-auto px-4">
 				<div className="flex justify-between items-center">
 					<a href="#" onClick={() => history.push("/")}>
@@ -83,52 +90,60 @@ const Header = () => {
 					</nav>
 
 					{/* Mobile Navigation */}
-					{isMenuOpen && (
-						<div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50">
-							<div className="bg-white w-[80%] max-w-sm h-full p-6">
-								<div className="flex justify-end mb-6">
-									<button
-										onClick={() => setIsMenuOpen(false)}
-										className="text-2xl"
-									>
-										✕
-									</button>
+					<AnimatePresence>
+						{isMenuOpen && (
+							<motion.div
+								variants={drawerSlideIn}
+								initial="hidden"
+								animate="show"
+								exit="exit"
+								className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50"
+							>
+								<div className="bg-white w-[80%] max-w-sm h-full p-6">
+									<div className="flex justify-end mb-6">
+										<button
+											onClick={() => setIsMenuOpen(false)}
+											className="text-2xl"
+										>
+											✕
+										</button>
+									</div>
+									<ul className="space-y-4">
+										{menuItems.map((item, index) => (
+											<li key={index}>
+												{item.section && location.pathname === "/" ? (
+													<Link
+														to={item.section}
+														activeClass="active"
+														smooth={true}
+														spy={true}
+														className="block py-2 hover:text-accent transition duration-300"
+														onClick={() => setIsMenuOpen(false)}
+													>
+														{item.title}
+													</Link>
+												) : (
+													<a
+														href="#"
+														onClick={
+															item.action ||
+															(() => handleSectionClick(item.section))
+														}
+														className="block py-2 hover:text-accent transition duration-300"
+													>
+														{item.title}
+													</a>
+												)}
+											</li>
+										))}
+									</ul>
 								</div>
-								<ul className="space-y-4">
-									{menuItems.map((item, index) => (
-										<li key={index}>
-											{item.section && location.pathname === "/" ? (
-												<Link
-													to={item.section}
-													activeClass="active"
-													smooth={true}
-													spy={true}
-													className="block py-2 hover:text-accent transition duration-300"
-													onClick={() => setIsMenuOpen(false)}
-												>
-													{item.title}
-												</Link>
-											) : (
-												<a
-													href="#"
-													onClick={
-														item.action ||
-														(() => handleSectionClick(item.section))
-													}
-													className="block py-2 hover:text-accent transition duration-300"
-												>
-													{item.title}
-												</a>
-											)}
-										</li>
-									))}
-								</ul>
-							</div>
-						</div>
-					)}
+							</motion.div>
+						)}
+					</AnimatePresence>
 				</div>
 			</div>
-		</header>
+		</motion.header>
 	);
 };
 

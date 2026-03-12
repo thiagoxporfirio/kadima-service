@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+import { fadeIn, viewport } from "../variants";
 import {
 	FaMapMarkerAlt,
 	FaClock,
@@ -15,16 +15,16 @@ const Contact = () => {
 	const form = useRef();
 
 	return (
-		<section className="section mt-[100px] py-16 lg:selection" id="contact">
+		<section className="section" id="contact">
 			<div className="container mx-auto">
 				<ClientCarousel />
-				<div className="flex flex-col lg:flex-row mb-[50px]">
+				<div className="flex flex-col lg:flex-row mb-12 lg:mb-16">
 					{/* text */}
 					<motion.div
-						variants={fadeIn("right", 0.3)}
+						variants={fadeIn("right", 0.1)}
 						initial="hidden"
-						whileInView={"show"}
-						viewport={{ once: false, amount: 0.3 }}
+						whileInView="show"
+						viewport={viewport}
 						className="flex-1 flex justify-start items-center z-30"
 					>
 						<div>
@@ -41,10 +41,10 @@ const Contact = () => {
 					{/* form */}
 					<motion.div
 						ref={form}
-						variants={fadeIn("left", 0.3)}
+						variants={fadeIn("left", 0.25)}
 						initial="hidden"
-						whileInView={"show"}
-						viewport={{ once: false, amount: 0.3 }}
+						whileInView="show"
+						viewport={viewport}
 						className="flex-1 bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl flex flex-col gap-y-6 p-8 hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 z-30"
 					>
 						<div className="space-y-8">

@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import init1 from "../assets/init1.jpg";
 import init2 from "../assets/init2.jpeg";
 import init3 from "../assets/init3.jpg";
+import LogoMark from "../assets/new/logos-kadima-energia-que-impulsiona-v016.jpg";
 
 const sliderSettings = {
 	dots: true,
@@ -231,6 +232,27 @@ const Banner = () => {
 							</motion.div>
 						</div>
 					</div>
+				</div>
+
+				{/* Watermark logo mark */}
+				<div
+					style={{
+						position: "absolute",
+						right: "-40px",
+						top: "50%",
+						transform: "translateY(-50%)",
+						zIndex: 2,
+						opacity: 0.07,
+						pointerEvents: "none",
+						width: "520px",
+						height: "520px"
+					}}
+				>
+					<img
+						src={LogoMark}
+						alt=""
+						style={{ width: "100%", height: "100%", objectFit: "contain" }}
+					/>
 				</div>
 
 				{/* Scroll indicator */}

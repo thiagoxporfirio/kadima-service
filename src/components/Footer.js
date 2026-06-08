@@ -1,6 +1,6 @@
 import React from "react";
 import { FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import Logo from "../assets/new/logos-kadima-energia-que-impulsiona-v01.jpg";
+import Logo from "../assets/new/logos-kadima-energia-que-impulsiona-v014.jpg";
 
 const Footer = () => {
 	const year = new Date().getFullYear();

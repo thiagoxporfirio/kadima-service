@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { useHistory, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { headerSlideDown, drawerSlideIn } from "../variants";
-import Logo from "../assets/new/logos-kadima-energia-que-impulsiona-v01-removebg-preview.png";
+import Logo from "../assets/new/logos-kadima-energia-que-impulsiona-v014-removebg-preview.png"
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);

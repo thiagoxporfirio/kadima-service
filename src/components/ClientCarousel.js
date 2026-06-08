@@ -17,71 +17,90 @@ import client10 from "../assets/santa.png";
 import client11 from "../assets/seta.png";
 import client12 from "../assets/weg.png";
 
+const clients = [
+	client1, client2, client3, client4, client5, client6,
+	client7, client8, client9, client10, client11, client12
+];
+
+const sliderSettings = {
+	dots: false,
+	infinite: true,
+	speed: 600,
+	slidesToShow: 5,
+	slidesToScroll: 1,
+	autoplay: true,
+	autoplaySpeed: 2800,
+	arrows: false,
+	pauseOnHover: true,
+	responsive: [
+		{ breakpoint: 1024, settings: { slidesToShow: 4 } },
+		{ breakpoint: 768,  settings: { slidesToShow: 3 } },
+		{ breakpoint: 480,  settings: { slidesToShow: 2 } }
+	]
+};
+
 const ClientCarousel = () => {
-	const sliderSettings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 3000,
-		responsive: [
-			{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1,
-					infinite: true,
-					dots: true
-				}
-			},
-			{
-				breakpoint: 600,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1,
-					initialSlide: 2
-				}
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
-			}
-		]
-	};
-
-	const clients = [
-		client1, client2, client3, client4, client5, client6, 
-		client7, client8, client9, client10, client11, client12
-	];
-
 	return (
-		<motion.section
+		<motion.div
 			variants={fadeIn("up", 0.1)}
 			initial="hidden"
 			whileInView="show"
 			viewport={viewport}
-			className="py-16 md:py-20 mb-10"
+			style={{ marginBottom: "4rem" }}
 		>
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h2 className="text-3xl font-bold text-center mb-8">Nossos Clientes</h2>
+			{/* Header */}
+			<div className="flex items-center gap-4 mb-8">
+				<span className="accent-line" style={{ marginBottom: 0 }} />
+				<p className="overline" style={{ marginBottom: 0 }}>
+					Empresas que confiam na Kadima
+				</p>
+			</div>
+
+			{/* Carousel */}
+			<div
+				style={{
+					background: "var(--k-surface2)",
+					border: "1px solid var(--k-border-dim)",
+					borderRadius: "2px",
+					padding: "1.5rem 2rem"
+				}}
+			>
 				<Slider {...sliderSettings}>
-					{clients.map((client, index) => (
-						<div key={index} className="px-4 flex justify-center items-center">
-							<img
-								src={client}
-								alt={`Client ${index + 1}`}
-								className="w-[150px] h-[150px] object-contain"
-							/>
+					{clients.map((client, i) => (
+						<div key={i}>
+							<div
+								style={{
+									padding: "0 1rem",
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+									height: "80px"
+								}}
+							>
+								<img
+									src={client}
+									alt={`Cliente ${i + 1}`}
+									style={{
+										maxWidth: "120px",
+										maxHeight: "60px",
+										objectFit: "contain",
+										filter: "grayscale(100%) brightness(0.6)",
+										transition: "filter 0.3s ease"
+									}}
+									onMouseEnter={e =>
+										(e.currentTarget.style.filter = "grayscale(0%) brightness(1)")
+									}
+									onMouseLeave={e =>
+										(e.currentTarget.style.filter =
+											"grayscale(100%) brightness(0.6)")
+									}
+								/>
+							</div>
 						</div>
 					))}
 				</Slider>
 			</div>
-		</motion.section>
+		</motion.div>
 	);
 };
 

@@ -1,79 +1,214 @@
 import React from "react";
-import { FaLinkedin, FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import Logo from "../assets/new/logos-kadima-energia-que-impulsiona-v01.jpg";
 
 const Footer = () => {
+	const year = new Date().getFullYear();
+
 	return (
-		<footer className="bg-black p-6 md:p-10 text-white">
-			<div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-				<div>
-					<h4 className="font-bold mb-2 text-accent">CONTATO</h4>
-					<div className="flex space-x-4 mt-4">
-						<a
-							href="https://www.linkedin.com/company/kadima-service/?viewAsMember=true"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="hover:text-accent"
+		<footer
+			style={{
+				background: "var(--k-surface)",
+				borderTop: "1px solid var(--k-border)"
+			}}
+		>
+			<div className="max-w-7xl mx-auto px-4 py-12">
+				<div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+					{/* Brand */}
+					<div className="md:col-span-2">
+						<img
+							src={Logo}
+							alt="Kadima Service"
+							style={{ height: "110px", width: "auto", marginBottom: "1rem" }}
+						/>
+						<p
+							style={{
+								color: "var(--k-muted)",
+								fontSize: "0.9rem",
+								lineHeight: 1.7,
+								maxWidth: "340px"
+							}}
 						>
-							<FaWhatsapp size={24} />
-						</a>
-						<a
-							href="https://www.linkedin.com/company/kadima-service/?viewAsMember=true"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="hover:text-accent"
+							Excelência em engenharia elétrica, automação e telecomunicações.
+							Mais de 15 anos impulsionando projetos no Brasil inteiro.
+						</p>
+						<div className="flex gap-4 mt-5">
+							{[
+								{
+									href: "https://wa.me/5542999944224",
+									icon: <FaWhatsapp />,
+									label: "WhatsApp"
+								},
+								{
+									href: "https://www.linkedin.com/company/kadima-service/",
+									icon: <FaLinkedin />,
+									label: "LinkedIn"
+								},
+								{
+									href: "https://www.instagram.com/kadimaservice/",
+									icon: <FaInstagram />,
+									label: "Instagram"
+								}
+							].map((s, i) => (
+								<a
+									key={i}
+									href={s.href}
+									target="_blank"
+									rel="noreferrer"
+									aria-label={s.label}
+									style={{
+										width: "36px",
+										height: "36px",
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "center",
+										border: "1px solid var(--k-border-dim)",
+										borderRadius: "2px",
+										color: "var(--k-muted)",
+										fontSize: "1rem",
+										transition: "all 0.2s"
+									}}
+									onMouseEnter={e => {
+										e.currentTarget.style.borderColor = "var(--k-crimson)";
+										e.currentTarget.style.color = "var(--k-fire)";
+									}}
+									onMouseLeave={e => {
+										e.currentTarget.style.borderColor = "var(--k-border-dim)";
+										e.currentTarget.style.color = "var(--k-muted)";
+									}}
+								>
+									{s.icon}
+								</a>
+							))}
+						</div>
+					</div>
+
+					{/* Onde estamos */}
+					<div>
+						<h5
+							style={{
+								fontFamily: "'Barlow Condensed', sans-serif",
+								fontWeight: 700,
+								fontSize: "0.85rem",
+								letterSpacing: "0.15em",
+								textTransform: "uppercase",
+								color: "var(--k-crimson)",
+								marginBottom: "1rem"
+							}}
 						>
-							<FaLinkedin size={24} />
-						</a>
-						<a
-							href="https://www.facebook.com/profile.php?id=61566927685820"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="hover:text-accent"
+							Onde Estamos
+						</h5>
+						{[
+							"Rua Simão Pedro de Lisboa, 105",
+							"Jardim Primavera",
+							"Barrinha — SP"
+						].map((l, i) => (
+							<p
+								key={i}
+								style={{
+									color: "var(--k-muted)",
+									fontSize: "0.875rem",
+									margin: "0 0 4px"
+								}}
+							>
+								{l}
+							</p>
+						))}
+						<p
+							style={{
+								color: "var(--k-muted)",
+								fontSize: "0.875rem",
+								marginTop: "0.75rem"
+							}}
 						>
-							<FaFacebook size={24} />
-						</a>
+							Seg–Qui: 7h–17h
+							<br />
+							Sex: 7h–16h
+						</p>
+					</div>
+
+					{/* Contato */}
+					<div>
+						<h5
+							style={{
+								fontFamily: "'Barlow Condensed', sans-serif",
+								fontWeight: 700,
+								fontSize: "0.85rem",
+								letterSpacing: "0.15em",
+								textTransform: "uppercase",
+								color: "var(--k-crimson)",
+								marginBottom: "1rem"
+							}}
+						>
+							Contato
+						</h5>
+						{[
+							{ href: "tel:+5542999944224", label: "+55 42 9994-4224" },
+							{ href: "tel:+5534991530600", label: "+55 34 9915-3060" },
+							{
+								href: "mailto:kadima@kadima.eng.br",
+								label: "kadima@kadima.eng.br"
+							},
+							{
+								href: "mailto:vagas@kadima.eng.br",
+								label: "vagas@kadima.eng.br"
+							}
+						].map((item, i) => (
+							<a
+								key={i}
+								href={item.href}
+								style={{
+									display: "block",
+									color: "var(--k-muted)",
+									fontSize: "0.875rem",
+									textDecoration: "none",
+									marginBottom: "6px",
+									transition: "color 0.2s"
+								}}
+								onMouseEnter={e =>
+									(e.currentTarget.style.color = "var(--k-white)")
+								}
+								onMouseLeave={e =>
+									(e.currentTarget.style.color = "var(--k-muted)")
+								}
+							>
+								{item.label}
+							</a>
+						))}
 					</div>
 				</div>
 
-				<div>
-					<h4 className="font-bold mb-2 text-accent">Onde estamos</h4>
-					<p>Rua Simão Pedro de Lisboa, 105</p>
-					<p>Jardim Primavera</p>
-					<p>Barrinha - SP</p>
-					<a
-						href="https://www.google.com/maps"
-						className="no-underline hover:text-accent"
+				{/* Bottom bar */}
+				<div
+					style={{
+						marginTop: "3rem",
+						paddingTop: "1.5rem",
+						borderTop: "1px solid var(--k-border-dim)",
+						display: "flex",
+						flexDirection: "row",
+						flexWrap: "wrap",
+						justifyContent: "space-between",
+						alignItems: "center",
+						gap: "0.5rem"
+					}}
+				>
+					<p
+						style={{
+							color: "var(--k-muted)",
+							fontSize: "0.8rem",
+							margin: 0
+						}}
 					>
-						VISUALIZAR NO MAPA
-					</a>
-				</div>
-
-				<div>
-					<h4 className="font-bold mb-2 text-accent">Atendimento</h4>
-					<p>Segunda à Quinta</p>
-					<p>Das 7h às 17h</p>
-					<p>Sexta</p>
-					<p>Das 7h às 16h</p>
-				</div>
-
-				<div>
-					<h4 className="font-bold mb-2 text-accent">CONTATO</h4>
-					<p>Luiz Henrique: +55 42 9994-4224</p>
-					<p>Vivian Araujo: +55 34 9915-3060</p>
-					<p>
-						Email:{" "}
-						<a href="mailto:wilza@kadima.eng.br" className="hover:text-accent">
-							wilza@kadima.eng.br
-						</a>
+						© {year} Kadima Service. Todos os direitos reservados.
 					</p>
-					<p>
-						Email:{" "}
-						<a
-							href="mailto:luiz.souza@kadima.eng.br"
-							className="hover:text-accent"
-						>
-							luiz.souza@kadima.eng.br
-						</a>
+					<p
+						style={{
+							color: "rgba(154,154,154,0.4)",
+							fontSize: "0.75rem",
+							margin: 0
+						}}
+					>
+						Energia que impulsiona
 					</p>
 				</div>
 			</div>

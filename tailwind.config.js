@@ -2,9 +2,11 @@ module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		fontFamily: {
-			primary: "'Titillium Web', sans-serif",    // Modern, professional, technical feel
-			secondary: "'Source Sans Pro', sans-serif", // Clean, readable
-			tertiary: "'Roboto Condensed', sans-serif" // Great for numbers and technical data
+			display:   "'Barlow Condensed', sans-serif",
+			body:      "'DM Sans', sans-serif",
+			primary:   "'Barlow Condensed', sans-serif",
+			secondary: "'DM Sans', sans-serif",
+			tertiary:  "'Barlow Condensed', sans-serif"
 		},
 		container: {
 			padding: {
@@ -19,28 +21,26 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				primary: "#0a0a0a",
-				accent: "#FF0000",        // Main red
-				'accent-dark': '#CC0000', // Darker red
-				'text-dark': '#000000',   // Black for text
+				primary:      "#141414",
+				surface:      "#1E1E1E",
+				surface2:     "#252525",
+				accent:       "#8B2020",
+				"accent-mid": "#A52828",
+				"accent-hi":  "#C0392B",
+				muted:        "#9A9A9A",
+				light:        "#F0EDE8",
 			},
 			backgroundImage: {
-				site: "url('./assets/site-bg.jpg')",
-				// about: "url('./assets/about.png')"
+				site:     "none",
 				services: "url('./assets/services.png')"
 			},
 			backdropBlur: {
-				sm: '50px',
+				sm: "50px"
 			},
 			zIndex: {
-				'0': '0',
-				'10': '10',
-				'20': '20',
-				'30': '30',
-				'40': '40',
-				'50': '50',
-				'auto': 'auto',
-			},
+				"0": "0", "10": "10", "20": "20",
+				"30": "30", "40": "40", "50": "50", auto: "auto"
+			}
 		}
 	},
 	plugins: []

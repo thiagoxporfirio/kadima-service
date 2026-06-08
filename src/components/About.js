@@ -1,5 +1,4 @@
 import React from "react";
-
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
@@ -8,122 +7,215 @@ import { Link } from "react-scroll";
 import { FaBullseye, FaEye } from "react-icons/fa";
 import kadima from "../assets/kadima.jpeg";
 
+const stats = [
+	{ end: 15, suffix: "+", label: "Anos de\nExperiência" },
+	{ end: 500, suffix: "m²", label: "Área\nIndustrial" },
+	{ end: 100, suffix: "+", label: "Obras\nRealizadas" }
+];
+
 const About = () => {
-	const [ref, inView] = useInView({
-		threshold: 0.3
-	});
+	const [ref, inView] = useInView({ threshold: 0.3 });
 
 	return (
-		<section className="section" id="about" ref={ref}>
-			<div className="container mx-auto">
-				<div className="flex flex-col gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0">
-					{/* img */}
+		<section
+			className="section"
+			id="about"
+			ref={ref}
+			style={{ background: "var(--k-surface)", padding: "6rem 0" }}
+		>
+			<div className="container mx-auto px-4">
+				<div className="flex flex-col lg:flex-row gap-16 lg:items-start">
+
+					{/* Left — image block */}
 					<motion.div
 						variants={fadeIn("right", 0.1)}
 						initial="hidden"
 						whileInView="show"
 						viewport={viewport}
-						className="flex-1 flex items-center justify-center z-30"
+						className="lg:w-[48%]"
+						style={{ position: "relative" }}
 					>
-						<img
-							src={kadima}
-							alt="Kadima Service Placeholder"
-							className="rounded-lg shadow-xl w-full max-w-md lg:max-w-none"
+						{/* Red border frame */}
+						<div
+							style={{
+								position: "absolute",
+								top: "-16px",
+								left: "-16px",
+								width: "calc(100% - 40px)",
+								height: "calc(100% - 40px)",
+								border: "2px solid var(--k-crimson)",
+								zIndex: 0,
+								borderRadius: "2px"
+							}}
 						/>
+						<div style={{ position: "relative", zIndex: 1 }}>
+							<img
+								src={kadima}
+								alt="Kadima Service"
+								style={{
+									width: "100%",
+									height: "480px",
+									objectFit: "cover",
+									borderRadius: "2px",
+									display: "block"
+								}}
+							/>
+							{/* overlay gradient */}
+							<div
+								style={{
+									position: "absolute",
+									inset: 0,
+									background:
+										"linear-gradient(to top, rgba(20,20,20,0.6) 0%, transparent 50%)"
+								}}
+							/>
+						</div>
+
+						{/* Stats over image */}
+						<div
+							style={{
+								position: "absolute",
+								bottom: "1.5rem",
+								left: "1.5rem",
+								right: "1.5rem",
+								zIndex: 2,
+								display: "flex",
+								gap: "1rem"
+							}}
+						>
+							{stats.map((s, i) => (
+								<div
+									key={i}
+									style={{
+										flex: 1,
+										background: "rgba(20,20,20,0.85)",
+										backdropFilter: "blur(8px)",
+										border: "1px solid var(--k-border)",
+										borderTop: "3px solid var(--k-crimson)",
+										padding: "0.75rem",
+										textAlign: "center"
+									}}
+								>
+									<div className="stat-num" style={{ fontSize: "1.75rem" }}>
+										{inView ? (
+											<CountUp start={0} end={s.end} duration={4} />
+										) : 0}
+										{s.suffix}
+									</div>
+									<div
+										style={{
+											fontSize: "0.65rem",
+											letterSpacing: "0.1em",
+											textTransform: "uppercase",
+											color: "var(--k-muted)",
+											whiteSpace: "pre-line",
+											lineHeight: 1.4,
+											marginTop: "4px"
+										}}
+									>
+										{s.label}
+									</div>
+								</div>
+							))}
+						</div>
 					</motion.div>
-					{/* txt */}
+
+					{/* Right — text */}
 					<motion.div
-						variants={fadeIn("left", 0.25)}
+						variants={fadeIn("left", 0.2)}
 						initial="hidden"
 						whileInView="show"
 						viewport={viewport}
-						className="flex-1 z-30"
+						className="lg:w-[52%]"
 					>
-						<h2 className="h2 text-accent">Quem Somos</h2>
-						<h3 className="h3 mb-4">
-							Excelência em Engenharia Elétrica e Automação
-						</h3>
-						<p className="mb-6">
+						<span className="accent-line" />
+						<p className="overline mb-3">Quem Somos</p>
+						<h2 className="h2" style={{ color: "var(--k-white)" }}>
+							Excelência em<br />
+							<span style={{ color: "var(--k-crimson)" }}>Engenharia Elétrica</span>
+						</h2>
+						<p
+							style={{
+								color: "rgba(240,237,232,0.75)",
+								marginBottom: "2rem",
+								lineHeight: 1.8,
+								fontSize: "1.05rem"
+							}}
+						>
 							Na linha de projetos renováveis, a KDM participou de inúmeros
 							projetos de tecnologias eólica e fotovoltaica em todo o Brasil, em
-							diferentes fases do projeto. Além disso, a KDM, conta com
-							equipamentos certificados nos mais avançados laboratórios do
-							Brasil, realiza inspeções, testes e certificações em cabos BT, MT
-							e Fibra óptica para cumprir as normas regulamentadores brasileiras
-							e internacionais. A KDM conta com pessoal qualificado e
-							equipamentos modernos para atender às suas necessidades.
+							diferentes fases do projeto. A KDM conta com equipamentos
+							certificados nos mais avançados laboratórios do Brasil, realizando
+							inspeções, testes e certificações em cabos BT, MT e Fibra óptica
+							para cumprir as normas regulamentadoras brasileiras e internacionais.
 						</p>
-						<div className="flex gap-x-6 lg:gap-x-10 mb-12">
-							<div>
-								<div className="text-[40px] font-tertiary text-gradient mb-2">
-									{inView ? <CountUp start={0} end={15} duration={6} /> : null}+
+
+						{/* Missão & Visão */}
+						<div className="flex flex-col gap-4 mb-8">
+							{[
+								{
+									icon: <FaBullseye />,
+									title: "Missão",
+									text: "Ser reconhecida como a melhor prestadora de serviço, sempre na busca de soluções e atendimento de qualidade."
+								},
+								{
+									icon: <FaEye />,
+									title: "Visão",
+									text: "Ser empresa de referência em Telecomunicações e Eletricidade, gerando valor com alta tecnologia e desenvolvimento humano."
+								}
+							].map((item, i) => (
+								<div
+									key={i}
+									className="shimmer-hover"
+									style={{
+										background: "var(--k-surface2)",
+										border: "1px solid var(--k-border-dim)",
+										borderLeft: "3px solid var(--k-crimson)",
+										padding: "1.25rem 1.5rem",
+										borderRadius: "2px"
+									}}
+								>
+									<div
+										className="flex items-center gap-3 mb-2"
+										style={{
+											fontFamily: "'Barlow Condensed', sans-serif",
+											fontWeight: 700,
+											fontSize: "1.1rem",
+											letterSpacing: "0.06em",
+											textTransform: "uppercase",
+											color: "var(--k-white)"
+										}}
+									>
+										<span style={{ color: "var(--k-crimson)", fontSize: "1rem" }}>
+											{item.icon}
+										</span>
+										{item.title}
+									</div>
+									<p
+										style={{
+											color: "var(--k-muted)",
+											fontSize: "0.95rem",
+											lineHeight: 1.65,
+											margin: 0
+										}}
+									>
+										{item.text}
+									</p>
 								</div>
-								<div className="font-primary text-sm tracking-[2px]">
-									Anos de <br />
-									Experiência
-								</div>
-							</div>
-							<div>
-								<div className="text-[40px] font-tertiary text-gradient mb-2">
-									{inView ? <CountUp start={0} end={500} duration={8} /> : null}
-									m²
-								</div>
-								<div className="font-primary text-sm tracking-[2px]">
-									de Área <br />
-									Industrial
-								</div>
-							</div>
-							<div>
-								<div className="text-[40px] font-tertiary text-gradient mb-2">
-									{inView ? <CountUp start={0} end={100} duration={6} /> : null}
-									+
-								</div>
-								<div className="font-primary text-sm tracking-[2px]">
-									Obras <br />
-									Realizadas
-								</div>
-							</div>
-						</div>
-						<div className="flex gap-x-8 items-center mt-9">
-							<button className="btn btn-lg">
-								<Link to="contact" activeClass="active">
-									Entre em contato
-								</Link>
-							</button>
-							<a href="#" className="text-gradient btn-link">
-								Nossos Projetos
-							</a>
+							))}
 						</div>
 
-						<div className="flex flex-col items-center mt-12">
-							<div className="bg-white p-8 rounded-lg shadow-lg mb-8">
-								<div className="flex items-center mb-4">
-									<FaBullseye className="text-accent text-4xl mr-4" />
-									<h4 className="text-[24px] tracking-wide font-primary font-semibold">
-										Missão
-									</h4>
-								</div>
-								<p className="font-secondary leading-tight text-lg">
-									Ser reconhecida como a melhor prestadora de serviço, sempre na
-									busca de soluções e atendimento de qualidade aos clientes.
-								</p>
-							</div>
-
-							<div className="bg-white p-8 rounded-lg shadow-lg">
-								<div className="flex items-center mb-4">
-									<FaEye className="text-accent text-4xl mr-4" />
-									<h4 className="text-[24px] tracking-wide font-primary font-semibold">
-										Visão
-									</h4>
-								</div>
-								<p className="font-secondary leading-tight text-lg">
-									Ser uma empresa de referência na prestação de serviços,
-									abrangendo o setor de Telecomunicações e Eletricidade com alta
-									qualidade, foco no cliente e no mercado, gerando valor aos
-									sócios, clientes, empregados e toda a sociedade, através do
-									desenvolvimento humano e aplicação de alta tecnologia.
-								</p>
-							</div>
+						<div className="flex flex-wrap gap-4">
+							<Link to="contact" smooth={true}>
+								<button className="btn btn-primary">
+									<span>Entre em Contato</span>
+								</button>
+							</Link>
+							<Link to="work" smooth={true}>
+								<button className="btn btn-outline">
+									<span>Nossos Projetos</span>
+								</button>
+							</Link>
 						</div>
 					</motion.div>
 				</div>

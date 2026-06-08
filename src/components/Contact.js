@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn, viewport } from "../variants";
 import {
@@ -11,146 +11,254 @@ import {
 } from "react-icons/fa";
 import ClientCarousel from "./ClientCarousel";
 
-const Contact = () => {
-	const form = useRef();
+const infoBlocks = [
+	{
+		icon: <FaMapMarkerAlt />,
+		title: "Onde estamos",
+		lines: [
+			"Rua Simão Pedro de Lisboa, 105",
+			"Jardim Primavera",
+			"Barrinha — SP"
+		]
+	},
+	{
+		icon: <FaClock />,
+		title: "Atendimento",
+		lines: [
+			"Segunda à Quinta: 7h às 17h",
+			"Sexta: 7h às 16h"
+		]
+	},
+	{
+		icon: <FaPhone />,
+		title: "Telefones",
+		lines: [
+			"+55 42 9994-4224 (Comercial)",
+			"+55 34 9915-3060 (Vivian)",
+			"+55 42 9911-7846 (Ouvidoria)"
+		]
+	},
+	{
+		icon: <FaEnvelope />,
+		title: "E-mails",
+		links: [
+			{ href: "mailto:kadima@kadima.eng.br", label: "kadima@kadima.eng.br" },
+			{ href: "mailto:ouvidoria@kadima.eng.br", label: "ouvidoria@kadima.eng.br" },
+			{ href: "mailto:vagas@kadima.eng.br", label: "vagas@kadima.eng.br" }
+		]
+	}
+];
 
+const Contact = () => {
 	return (
-		<section className="section" id="contact">
-			<div className="container mx-auto">
+		<section
+			className="section"
+			id="contact"
+			style={{ background: "var(--k-dark)", padding: "6rem 0 4rem" }}
+		>
+			<div className="container mx-auto px-4">
 				<ClientCarousel />
-				<div className="flex flex-col lg:flex-row mb-12 lg:mb-16">
-					{/* text */}
+
+				{/* Section header */}
+				<div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
 					<motion.div
 						variants={fadeIn("right", 0.1)}
 						initial="hidden"
 						whileInView="show"
 						viewport={viewport}
-						className="flex-1 flex justify-start items-center z-30"
 					>
-						<div>
-							<h4 className="text-x1 uppercase text-accent font-medium mb-2 tracking-wide">
-								Entrar em contato
-							</h4>
-							<h2 className=" text-[45px] lg:text-[90px] leading-none mb-12">
-								Vamos trabalhar
-								<br />
-								juntos!
-							</h2>
-						</div>
+						<span className="accent-line" />
+						<p className="overline mb-3">Fale com a gente</p>
+						<h2
+							className="h2"
+							style={{ color: "var(--k-white)", marginBottom: 0, lineHeight: 0.95 }}
+						>
+							Vamos trabalhar
+							<br />
+							<span style={{ color: "var(--k-crimson)" }}>juntos!</span>
+						</h2>
 					</motion.div>
-					{/* form */}
 					<motion.div
-						ref={form}
-						variants={fadeIn("left", 0.25)}
+						variants={fadeIn("left", 0.15)}
 						initial="hidden"
 						whileInView="show"
 						viewport={viewport}
-						className="flex-1 bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl flex flex-col gap-y-6 p-8 hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 z-30"
+						style={{ maxWidth: "360px" }}
 					>
-						<div className="space-y-8">
-							{/* Localização */}
-							<div className="transform hover:scale-105 transition-all duration-300">
-								<h4 className="text-xl font-medium mb-4 flex items-center gap-2 text-accent">
-									<FaMapMarkerAlt /> Onde estamos
-								</h4>
-								<div className="pl-7 space-y-1 text-white/80">
-									<p>Rua Simão Pedro de Lisboa, 105</p>
-									<p>Jardim Primavera</p>
-									<p>Barrinha - SP</p>
-								</div>
-							</div>
-
-							{/* Horário */}
-							<div className="transform hover:scale-105 transition-all duration-300">
-								<h4 className="text-xl font-medium mb-4 flex items-center gap-2 text-accent">
-									<FaClock /> Atendimento
-								</h4>
-								<div className="pl-7 space-y-1 text-white/80">
-									<p>Segunda à Quinta</p>
-									<p>Das 7h às 17h</p>
-									<p>Sexta</p>
-									<p>Das 7h às 16h</p>
-								</div>
-							</div>
-
-							{/* Contato */}
-							<div className="transform hover:scale-105 transition-all duration-300">
-								<h4 className="text-xl font-medium mb-4 flex items-center gap-2 text-accent">
-									<FaPhone /> Contato
-								</h4>
-								<div className="pl-7 space-y-3">
-									<p className="flex items-center gap-2 text-white/80">
-										<FaPhone className="text-accent" /> Telefone Geral - +55 42
-										99156-7356
-									</p>
-									<p className="flex items-center gap-2 text-white/80">
-										<FaPhone className="text-accent" /> Comercial - +55 42
-										99994-4224
-									</p>
-									<p className="flex items-center gap-2 text-white/80">
-										<FaPhone className="text-accent" /> Ouvidoria - +55 42
-										99117-8463
-									</p>
-								</div>
-							</div>
-
-							{/* Emails */}
-							<div className="transform hover:scale-105 transition-all duration-300">
-								<h4 className="text-xl font-medium mb-4 flex items-center gap-2 text-accent">
-									<FaEnvelope /> Emails
-								</h4>
-								<div className="pl-7 space-y-3">
-									<p className="flex items-center gap-2 text-white/80">
-										<FaEnvelope className="text-accent" />
-										<a
-											href="mailto:kadima@kadima.eng.br"
-											className="hover:text-accent underline transition-colors duration-300"
-										>
-											kadima@kadima.eng.br
-										</a>
-									</p>
-									<p className="flex items-center gap-2 text-white/80">
-										<FaEnvelope className="text-accent" />
-										<a
-											href="mailto:ouvidoria@kadima.eng.br"
-											className="hover:text-accent underline transition-colors duration-300"
-										>
-											ouvidoria@kadima.eng.br
-										</a>
-									</p>
-									<p className="flex items-center gap-2 text-white/80">
-										<FaEnvelope className="text-accent" />
-										<a
-											href="mailto:vagas@kadima.eng.br"
-											className="hover:text-accent underline transition-colors duration-300"
-										>
-											vagas@kadima.eng.br
-										</a>
-									</p>
-								</div>
-							</div>
-
-							<div className="flex gap-4 pt-4">
-								<a
-									href="https://www.linkedin.com/company/kadima-service/?viewAsMember=true"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-2xl text-white/80 hover:text-accent transition-colors duration-300"
-								>
-									<FaLinkedin />
-								</a>
-								<a
-									href="https://www.instagram.com/kadimaservice/"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-2xl text-white/80 hover:text-accent transition-colors duration-300"
-								>
-									<FaInstagram />
-								</a>
-							</div>
-						</div>
+						<p
+							style={{
+								color: "var(--k-muted)",
+								fontSize: "0.95rem",
+								lineHeight: 1.7,
+								marginBottom: "1.25rem"
+							}}
+						>
+							Precisa de um orçamento ou tem alguma dúvida? Nossa equipe está
+							pronta para atender você.
+						</p>
+						<a
+							href="https://wa.me/5542999944224?text=Olá, gostaria de mais informações."
+							target="_blank"
+							rel="noreferrer"
+						>
+							<button className="btn btn-primary">
+								<span>Fale pelo WhatsApp</span>
+							</button>
+						</a>
 					</motion.div>
 				</div>
+
+				{/* Info grid */}
+				<motion.div
+					variants={fadeIn("up", 0.2)}
+					initial="hidden"
+					whileInView="show"
+					viewport={viewport}
+					className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+				>
+					{infoBlocks.map((block, i) => (
+						<div
+							key={i}
+							className="shimmer-hover"
+							style={{
+								background: "var(--k-surface)",
+								border: "1px solid var(--k-border-dim)",
+								borderTop: "3px solid var(--k-crimson)",
+								padding: "1.5rem",
+								borderRadius: "2px"
+							}}
+						>
+							{/* Title */}
+							<div
+								className="flex items-center gap-2 mb-3"
+								style={{
+									fontFamily: "'Barlow Condensed', sans-serif",
+									fontWeight: 700,
+									fontSize: "1rem",
+									letterSpacing: "0.08em",
+									textTransform: "uppercase",
+									color: "var(--k-white)"
+								}}
+							>
+								<span style={{ color: "var(--k-crimson)", fontSize: "0.9rem" }}>
+									{block.icon}
+								</span>
+								{block.title}
+							</div>
+
+							{/* Lines */}
+							{block.lines && (
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										gap: "4px"
+									}}
+								>
+									{block.lines.map((line, j) => (
+										<p
+											key={j}
+											style={{
+												color: "var(--k-muted)",
+												fontSize: "0.875rem",
+												margin: 0,
+												lineHeight: 1.6
+											}}
+										>
+											{line}
+										</p>
+									))}
+								</div>
+							)}
+
+							{/* Links */}
+							{block.links && (
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "column",
+										gap: "6px"
+									}}
+								>
+									{block.links.map((link, j) => (
+										<a
+											key={j}
+											href={link.href}
+											style={{
+												color: "var(--k-muted)",
+												fontSize: "0.85rem",
+												textDecoration: "none",
+												transition: "color 0.2s"
+											}}
+											onMouseEnter={e =>
+												(e.currentTarget.style.color = "var(--k-fire)")
+											}
+											onMouseLeave={e =>
+												(e.currentTarget.style.color = "var(--k-muted)")
+											}
+										>
+											{link.label}
+										</a>
+									))}
+								</div>
+							)}
+						</div>
+					))}
+				</motion.div>
+
+				{/* Social strip */}
+				<motion.div
+					variants={fadeIn("up", 0.3)}
+					initial="hidden"
+					whileInView="show"
+					viewport={viewport}
+					className="flex items-center gap-4 mt-8"
+					style={{
+						paddingTop: "2rem",
+						borderTop: "1px solid var(--k-border-dim)"
+					}}
+				>
+					<span
+						style={{
+							fontSize: "0.7rem",
+							letterSpacing: "0.15em",
+							textTransform: "uppercase",
+							color: "var(--k-muted)"
+						}}
+					>
+						Redes Sociais
+					</span>
+					<a
+						href="https://www.linkedin.com/company/kadima-service/"
+						target="_blank"
+						rel="noreferrer"
+						style={{
+							color: "var(--k-muted)",
+							fontSize: "1.25rem",
+							transition: "color 0.2s"
+						}}
+						onMouseEnter={e => (e.currentTarget.style.color = "var(--k-fire)")}
+						onMouseLeave={e => (e.currentTarget.style.color = "var(--k-muted)")}
+						aria-label="LinkedIn"
+					>
+						<FaLinkedin />
+					</a>
+					<a
+						href="https://www.instagram.com/kadimaservice/"
+						target="_blank"
+						rel="noreferrer"
+						style={{
+							color: "var(--k-muted)",
+							fontSize: "1.25rem",
+							transition: "color 0.2s"
+						}}
+						onMouseEnter={e => (e.currentTarget.style.color = "var(--k-fire)")}
+						onMouseLeave={e => (e.currentTarget.style.color = "var(--k-muted)")}
+						aria-label="Instagram"
+					>
+						<FaInstagram />
+					</a>
+				</motion.div>
 			</div>
 		</section>
 	);

@@ -1,69 +1,302 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Design tokens ─────────────────────────────────────────── */
+:root {
+  --k-dark:     #141414;
+  --k-surface:  #1E1E1E;
+  --k-surface2: #252525;
+  --k-crimson:  #8B2020;
+  --k-red:      #A52828;
+  --k-fire:     #C0392B;
+  --k-white:    #F0EDE8;
+  --k-muted:    #9A9A9A;
+  --k-border:   rgba(139, 32, 32, 0.25);
+  --k-border-dim: rgba(255,255,255,0.07);
+}
+
+/* ─── Reset & base ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--k-dark);
+  color: var(--k-white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── Noise overlay on body ─────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--k-dark); }
+::-webkit-scrollbar-thumb { background: var(--k-crimson); border-radius: 2px; }
+
+/* ─── Typography utilities ──────────────────────────────────── */
+.h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.overline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--k-crimson);
+}
+
+/* ─── Buttons ───────────────────────────────────────────────── */
 .btn {
-  background: linear-gradient(
-    92.23deg,
-    #CC0000 21.43%,     /* Darker Red */
-    #FF0000 50.63%,     /* Bright Red */
-    #FF3333 100%        /* Lighter Red */
-  );
-  box-shadow: 0px 4.42184px 107.23px rgba(204, 0, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn:hover {
-  background: linear-gradient(
-    92.23deg,
-    #FF3333 21.43%,     /* Lighter Red */
-    #FF0000 50.63%,     /* Bright Red */
-    #CC0000 100%        /* Darker Red */
-  );
+.btn-primary {
+  background: var(--k-crimson);
+  color: var(--k-white);
+  padding: 0.9rem 2.2rem;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--k-fire);
+  transform: translateX(-101%);
+  transition: transform 0.3s ease;
+}
+.btn-primary:hover::before { transform: translateX(0); }
+.btn-primary span { position: relative; z-index: 1; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--k-crimson);
+  padding: 0.85rem 2rem;
+  border: 1.5px solid var(--k-crimson);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.btn-outline:hover {
+  background: var(--k-crimson);
+  color: var(--k-white);
 }
 
-.gradient,
-.active {
-  background: linear-gradient(
-    92.23deg,
-    #990000 21.43%,     /* Very Dark Red */
-    #FF0000 50.63%,     /* Bright Red */
-    #CC0000 100%        /* Darker Red */
-  );
+/* Legacy compat */
+.btn-sm  { padding: 0.6rem 1.5rem; font-size: 0.875rem; }
+.btn-lg  { padding: 0.9rem 2.2rem; }
+.btn-link { font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--k-crimson); text-decoration: none; }
+.btn-link:hover { color: var(--k-fire); }
+
+/* ─── Section base ──────────────────────────────────────────── */
+.section {
+  padding: 5rem 0 6rem;
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-start;
 }
 
-.active {
-  color: #fff;
-  padding: 1rem;
-  border-radius: 100%;
+/* ─── Red accent line ────────────────────────────────────────── */
+.accent-line {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--k-crimson);
+  margin-bottom: 1.25rem;
 }
 
-@layer base {
-	body {
-		@apply font-secondary text-lg leading-8 text-black;  /* Changed from text-text-dark to text-black */
-	}
-	.h2 {
-		@apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
-	}
-	.h3 {
-		@apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
-	}
-	.btn {
-		@apply rounded-full font-primary text-white font-medium;
-	}
-	.btn-sm {
-		@apply h-[48px] px-6 text-sm;
-	}
-	.btn-lg {
-		@apply h-[56px] px-10 text-base;
-	}
-	.btn-link {
-		@apply text-base;
-	}
-	.text-gradient {
-		@apply bg-gradient-to-r text-transparent bg-clip-text from-[#990000] to-[#FF0000] font-bold font-primary hover:from-[#FF0000] hover:to-[#990000];
-	}
-	.section {
-		@apply py-16 md:py-20 lg:py-28 min-h-screen flex items-start;
-	}
+/* ─── Diagonal cut utility ──────────────────────────────────── */
+.diagonal-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
+.diagonal-top {
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ─── Card ──────────────────────────────────────────────────── */
+.k-card {
+  background: var(--k-surface);
+  border: 1px solid var(--k-border-dim);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.k-card:hover {
+  border-color: var(--k-border);
+  transform: translateY(-4px);
+}
+
+/* ─── Red top border card ───────────────────────────────────── */
+.k-card-line {
+  border-top: 3px solid var(--k-crimson);
+}
+
+/* ─── Text gradient ─────────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(90deg, var(--k-crimson), var(--k-fire));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* ─── Stats number ──────────────────────────────────────────── */
+.stat-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1;
+  color: var(--k-crimson);
+}
+
+/* ─── Nav link ──────────────────────────────────────────────── */
+.nav-link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--k-white);
+  opacity: 0.75;
+  position: relative;
+  transition: opacity 0.2s;
+  padding-bottom: 4px;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--k-crimson);
+  transition: width 0.3s ease;
+}
+.nav-link:hover, .nav-link.active { opacity: 1; }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+/* ─── Image overlay ─────────────────────────────────────────── */
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.img-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,20,20,0.7) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ─── Glowing red border ─────────────────────────────────────── */
+.glow-border {
+  box-shadow: 0 0 0 1px var(--k-crimson), 0 0 24px rgba(139,32,32,0.3);
+}
+
+/* ─── Slick carousel overrides ──────────────────────────────── */
+.slick-dots li button::before {
+  color: var(--k-crimson) !important;
+  font-size: 10px !important;
+}
+.slick-dots li.slick-active button::before {
+  color: var(--k-fire) !important;
+}
+.slick-prev::before,
+.slick-next::before { color: var(--k-crimson) !important; font-size: 1.5rem !important; }
+
+/* ─── Section divider line ──────────────────────────────────── */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--k-crimson) 50%, transparent);
+  opacity: 0.4;
+}
+
+/* ─── Shimmer on hover ──────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { transform: translateX(-150%) skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
+}
+.shimmer-hover {
+  overflow: hidden;
+  position: relative;
+}
+.shimmer-hover::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+}
+.shimmer-hover:hover::before {
+  animation: shimmer 0.6s ease forwards;
+}
+
+/* ─── Pulse dot ─────────────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(139,32,32,0.5); }
+  50%       { box-shadow: 0 0 0 8px rgba(139,32,32,0); }
+}
+.pulse-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--k-crimson);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ─── Service card overlay hover ───────────────────────────── */
+.service-card .img-cover { transition: transform 0.5s ease; }
+.service-card:hover .img-cover { transform: scale(1.04); }

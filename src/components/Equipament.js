@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer, staggerItem, viewport } from "../variants";
-import Footer from "./Footer";
 import vlf from "../assets/vlf.png";
 import dp from "../assets/dp.png";
 import tangente from "../assets/tangente.jpeg";
@@ -20,37 +19,37 @@ const equipamentos = [
 	{
 		src: tangente,
 		alt: "Tangente Delta",
-		title: "TANGENTE DELTA - Análise do grau de degradação da isolação",
-		text: "O ensaio de Tangente Delta permite a análise do grau de degradação da isolação, este ensaio também indica irregularidades diversas, defeitos que produzem descargas parciais, infiltração de água, arborescência, entre outros. Onde, é possível verificar tendências e reduzir a incidência de falhas inesperadas. A norma IEEE 400.2-2013 estabelece os critérios para os ensaios em cabos isolados com VLF e Tangente de Delta.",
-		titleAttr: "Saiba mais sobre Tangente Delta"
+		title: "Tangente Delta",
+		subtitle: "Análise do grau de degradação da isolação",
+		text: "O ensaio de Tangente Delta permite a análise do grau de degradação da isolação, indicando irregularidades diversas, defeitos que produzem descargas parciais, infiltração de água, arborescência, entre outros."
 	},
 	{
 		src: vlf,
 		alt: "Viola - VLF",
-		title: "Analisador de qualidade de energia (VLF)",
-		text: "VLF (Very Low Frequency): Nos ensaios de Tensão Aplicada VLF, submetemos os cabos a tensões elétricas alternadas em 0,1 Hz por períodos pré-determinados. Seja na etapa de comissionamento ou durante a operação, é indispensável garantir os requisitos mínimos de desempenho dos cabos isolados de média tensão.",
-		titleAttr: "Saiba mais sobre Viola - VLF"
+		title: "VLF",
+		subtitle: "Analisador de qualidade de energia",
+		text: "VLF (Very Low Frequency): submetemos os cabos a tensões elétricas alternadas em 0,1 Hz por períodos pré-determinados. Indispensável para garantir os requisitos mínimos de desempenho dos cabos isolados de média tensão."
 	},
 	{
 		src: dp,
 		alt: "Descarga Parcial e RIV",
-		title: "DESCARGA PARCIAL (DP) e TENSÃO DE RADIOINTERFERÊNCIA (RIV)",
-		text: "As Descargas Parciais são pequenas descargas elétricas originadas em cavidades internas de um sistema isolante ou em sua superfície. Sua ocorrência caracteriza uma fragilidade na sustentação dielétrica do material isolante e sua evolução pode ocasionar falhas e danos irreversíveis ao equipamento elétrico.",
-		titleAttr: "Saiba mais sobre Descarga Parcial"
+		title: "Descarga Parcial (DP) e RIV",
+		subtitle: "Tensão de radiointerferência",
+		text: "As Descargas Parciais são pequenas descargas elétricas originadas em cavidades internas de um sistema isolante. Sua ocorrência caracteriza uma fragilidade na sustentação dielétrica e pode ocasionar falhas irreversíveis."
 	},
 	{
 		src: shirla,
 		alt: "Shirla",
-		title: "SHIRLA - Teste de Revestimento de Cabos",
-		text: "O Shirla é um equipamento portátil especializado para testes de revestimento de cabos e localização precisa de falhas. Com sua tecnologia avançada, permite identificar e localizar defeitos no revestimento de cabos elétricos, garantindo a integridade e segurança das instalações.",
-		titleAttr: "Saiba mais sobre Shirla"
+		title: "Shirla",
+		subtitle: "Teste de Revestimento de Cabos",
+		text: "Equipamento portátil especializado para testes de revestimento de cabos e localização precisa de falhas. Identifica e localiza defeitos no revestimento de cabos elétricos, garantindo a integridade das instalações."
 	},
 	{
 		src: metrel,
 		alt: "Metrel",
-		title: "METREL - Medidor de Resistência de Terra",
-		text: "Equipamento versátil que permite a realização de todos os principais tipos de medição de terras em um único instrumento. Oferece sequências automáticas programáveis e uma ampla gama de tensões de teste de isolamento, variando de 50 V a 2500 V, garantindo medições precisas e confiáveis.",
-		titleAttr: "Saiba mais sobre Metrel"
+		title: "Metrel",
+		subtitle: "Medidor de Resistência de Terra",
+		text: "Equipamento versátil para todos os principais tipos de medição de terras em um único instrumento. Ampla gama de tensões de teste de isolamento, de 50 V a 2500 V."
 	}
 ];
 
@@ -58,118 +57,237 @@ const veiculos = [
 	{
 		src: van,
 		alt: "Van da Kadima",
-		title: "VAN DA KADIMA - Laboratório Móvel de Comissionamento",
-		text: "Nossa van laboratório é equipada com tecnologia de ponta para realizar serviços de comissionamento em campo. Oferece mobilidade e eficiência para testes e análises técnicas, permitindo atendimento ágil e preciso diretamente no local necessário.",
-		titleAttr: "Saiba mais sobre Van da Kadima"
+		title: "Van Laboratório",
+		subtitle: "Laboratório Móvel de Comissionamento",
+		text: "Equipada com tecnologia de ponta para serviços de comissionamento em campo. Mobilidade e eficiência para testes e análises técnicas diretamente no local necessário."
 	},
 	{
 		src: carro,
 		alt: "Carro da Kadima",
-		title: "CARRO OPERACIONAL",
-		text: "Veículo operacional para deslocamento rápido e eficiente da equipe técnica, proporcionando agilidade no atendimento aos clientes e transporte de equipamentos de menor porte para serviços específicos.",
-		titleAttr: "Saiba mais sobre nosso Carro Operacional"
+		title: "Carro Operacional",
+		subtitle: "Deslocamento rápido da equipe técnica",
+		text: "Veículo operacional para deslocamento ágil e eficiente da equipe técnica, proporcionando transporte de equipamentos de menor porte para serviços específicos."
 	},
 	{
 		src: munk,
 		alt: "Caminhão Munk",
-		title: "CAMINHÃO MUNK",
-		text: "Caminhão equipado com guindaste tipo Munk para operações que necessitam de elevação e movimentação de cargas. Ideal para instalações, manutenções e transporte de equipamentos pesados em campo.",
-		titleAttr: "Saiba mais sobre nosso Caminhão Munk"
+		title: "Caminhão Munk",
+		subtitle: "Elevação e movimentação de cargas",
+		text: "Equipado com guindaste tipo Munk para operações que necessitam de elevação e movimentação de cargas. Ideal para instalações e transporte de equipamentos pesados em campo."
 	},
 	{
 		src: cat,
 		alt: "Retroescavadeira CAT",
-		title: "RETROESCAVADEIRA CAT",
-		text: "Retroescavadeira CAT para serviços de escavação e movimentação de terra. Equipamento versátil e robusto, ideal para obras de infraestrutura e preparação de terrenos para instalações elétricas.",
-		titleAttr: "Saiba mais sobre nossa Retroescavadeira"
+		title: "Retroescavadeira CAT",
+		subtitle: "Escavação e movimentação de terra",
+		text: "Retroescavadeira CAT versátil e robusta, ideal para obras de infraestrutura e preparação de terrenos para instalações elétricas."
 	},
 	{
 		src: caminhaao,
 		alt: "Caminhão com Cesto Elevatório",
-		title: "CAMINHÃO COM CESTO ELEVATÓRIO",
-		text: "Caminhão equipado com cesto elevatório que proporciona acesso seguro e eficiente para trabalhos em altura. Ideal para manutenção de iluminação pública, redes elétricas e serviços que necessitam alcance vertical com segurança.",
-		titleAttr: "Saiba mais sobre nosso Caminhão com Cesto Elevatório"
+		title: "Cesto Elevatório",
+		subtitle: "Trabalhos seguros em altura",
+		text: "Caminhão com cesto elevatório para acesso seguro em trabalhos em altura. Ideal para manutenção de redes elétricas e serviços que necessitam alcance vertical."
 	}
 ];
 
-const CardGrid = ({ items, imageClass = "h-auto" }) => (
+const ItemCard = ({ item, index }) => (
 	<motion.div
-		variants={staggerContainer(0.09, 0.12)}
-		initial="hidden"
-		whileInView="show"
-		viewport={viewport}
-		className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+		variants={staggerItem}
+		style={{
+			background: "var(--k-surface)",
+			border: "1px solid var(--k-border-dim)",
+			borderTop: "3px solid var(--k-crimson)",
+			borderRadius: "2px",
+			overflow: "hidden",
+			display: "flex",
+			flexDirection: "column",
+			transition: "border-color 0.3s ease, transform 0.3s ease"
+		}}
+		onMouseEnter={e => {
+			e.currentTarget.style.borderColor = "var(--k-crimson)";
+			e.currentTarget.style.transform = "translateY(-4px)";
+		}}
+		onMouseLeave={e => {
+			e.currentTarget.style.borderColor = "var(--k-border-dim)";
+			e.currentTarget.style.transform = "translateY(0)";
+		}}
 	>
-		{items.map((item, index) => (
-			<motion.div
-				key={index}
-				variants={staggerItem}
-				className="border rounded-lg p-4 shadow-lg flex flex-col bg-white"
+		{/* Image */}
+		<div style={{ height: "220px", overflow: "hidden", position: "relative" }}>
+			<img
+				src={item.src}
+				alt={item.alt}
+				style={{
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+					display: "block",
+					transition: "transform 0.5s ease"
+				}}
+				onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
+				onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
+			/>
+			<div
+				style={{
+					position: "absolute",
+					inset: 0,
+					background: "linear-gradient(to top, rgba(20,20,20,0.7) 0%, transparent 55%)"
+				}}
+			/>
+			<span
+				style={{
+					position: "absolute",
+					top: "1rem",
+					right: "1rem",
+					fontFamily: "'Barlow Condensed', sans-serif",
+					fontWeight: 800,
+					fontSize: "2.5rem",
+					color: "rgba(139,32,32,0.3)",
+					lineHeight: 1
+				}}
 			>
-				<div className={`mb-4 ${imageClass !== "h-auto" ? "h-[250px]" : ""}`}>
-					<img
-						src={item.src}
-						alt={item.alt}
-						className={`w-full ${imageClass} object-cover rounded-md`}
-					/>
-				</div>
-				<div className="flex-grow">
-					<h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-					<p className="mb-4 leading-relaxed">{item.text}</p>
-				</div>
-				<a
-					href={WA_LINK}
-					title={item.titleAttr}
-					className="btn btn-lg mt-auto flex text-center justify-center items-center"
-				>
-					Saiba mais
-				</a>
-			</motion.div>
-		))}
+				{String(index + 1).padStart(2, "0")}
+			</span>
+		</div>
+
+		{/* Content */}
+		<div
+			style={{
+				padding: "1.5rem",
+				flex: 1,
+				display: "flex",
+				flexDirection: "column",
+				gap: "0.5rem"
+			}}
+		>
+			<p
+				style={{
+					fontSize: "0.65rem",
+					letterSpacing: "0.15em",
+					textTransform: "uppercase",
+					color: "var(--k-crimson)",
+					fontFamily: "'DM Sans', sans-serif",
+					fontWeight: 600,
+					margin: 0
+				}}
+			>
+				{item.subtitle}
+			</p>
+			<h3
+				style={{
+					fontFamily: "'Barlow Condensed', sans-serif",
+					fontWeight: 700,
+					fontSize: "1.3rem",
+					letterSpacing: "0.04em",
+					textTransform: "uppercase",
+					color: "var(--k-white)",
+					margin: 0
+				}}
+			>
+				{item.title}
+			</h3>
+			<p
+				style={{
+					color: "var(--k-muted)",
+					fontSize: "0.875rem",
+					lineHeight: 1.65,
+					margin: 0,
+					flex: 1
+				}}
+			>
+				{item.text}
+			</p>
+			<a
+				href={WA_LINK}
+				target="_blank"
+				rel="noreferrer"
+				className="btn btn-outline"
+				style={{ marginTop: "1rem", textDecoration: "none", display: "inline-flex" }}
+			>
+				<span>Saiba mais</span>
+			</a>
+		</div>
 	</motion.div>
 );
 
-const Equipament = () => {
-	return (
-		<>
-			{/* Equipment Section */}
-			<section className="section">
-				<div className="container mx-auto">
-					<motion.div
-						variants={fadeIn("up", 0.1)}
-						initial="hidden"
-						whileInView="show"
-						viewport={viewport}
-						className="mb-10"
-					>
-						<h2 className="h2 text-accent">Equipamentos</h2>
-						<p className="text-lg mb-8">Equipamentos de medição</p>
-					</motion.div>
-					<CardGrid items={equipamentos} imageClass="h-auto" />
-				</div>
-			</section>
+const SectionBlock = ({ title, subtitle, items }) => (
+	<section
+		style={{ background: "var(--k-dark)", padding: "5rem 0" }}
+	>
+		<div className="container mx-auto px-4">
+			<motion.div
+				variants={fadeIn("up", 0.1)}
+				initial="hidden"
+				whileInView="show"
+				viewport={viewport}
+				style={{ marginBottom: "3rem" }}
+			>
+				<span
+					style={{
+						display: "block",
+						width: "48px",
+						height: "3px",
+						background: "var(--k-crimson)",
+						marginBottom: "1.25rem"
+					}}
+				/>
+				<p
+					style={{
+						fontSize: "0.75rem",
+						fontWeight: 600,
+						letterSpacing: "0.2em",
+						textTransform: "uppercase",
+						color: "var(--k-crimson)",
+						marginBottom: "0.5rem"
+					}}
+				>
+					{subtitle}
+				</p>
+				<h2
+					style={{
+						fontFamily: "'Barlow Condensed', sans-serif",
+						fontWeight: 700,
+						fontSize: "clamp(2rem, 5vw, 3.5rem)",
+						lineHeight: 1,
+						letterSpacing: "0.04em",
+						textTransform: "uppercase",
+						color: "var(--k-white)",
+						margin: 0
+					}}
+				>
+					{title}
+				</h2>
+			</motion.div>
 
-			{/* Vehicles Section */}
-			<section className="section">
-				<div className="container mx-auto">
-					<motion.div
-						variants={fadeIn("up", 0.1)}
-						initial="hidden"
-						whileInView="show"
-						viewport={viewport}
-						className="mb-10"
-					>
-						<h2 className="h2 text-accent">Veículos</h2>
-						<p className="text-lg mb-8">Veículos disponíveis para o trabalho</p>
-					</motion.div>
-					<CardGrid items={veiculos} imageClass="h-[250px]" />
-				</div>
-			</section>
+			<motion.div
+				variants={staggerContainer(0.09, 0.12)}
+				initial="hidden"
+				whileInView="show"
+				viewport={viewport}
+				className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+			>
+				{items.map((item, i) => (
+					<ItemCard key={i} item={item} index={i} />
+				))}
+			</motion.div>
+		</div>
+	</section>
+);
 
-			<Footer />
-		</>
-	);
-};
+const Equipament = () => (
+	<>
+		<SectionBlock
+			title="Equipamentos"
+			subtitle="Locação de equipamentos"
+			items={equipamentos}
+		/>
+		<SectionBlock
+			title="Veículos"
+			subtitle="Frota disponível"
+			items={veiculos}
+		/>
+	</>
+);
 
 export default Equipament;
-

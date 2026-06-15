@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,12 +9,12 @@
   --k-dark:     #141414;
   --k-surface:  #1E1E1E;
   --k-surface2: #252525;
-  --k-crimson:  #8B2020;
-  --k-red:      #A52828;
-  --k-fire:     #C0392B;
+  --k-crimson:  #C32126;
+  --k-red:      #C32126;
+  --k-fire:     #A81B20;
   --k-white:    #F0EDE8;
   --k-muted:    #9A9A9A;
-  --k-border:   rgba(139, 32, 32, 0.25);
+  --k-border:   rgba(195, 33, 38, 0.25);
   --k-border-dim: rgba(255,255,255,0.07);
 }
 
@@ -26,7 +26,7 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--k-dark);
   color: var(--k-white);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 1rem;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -51,15 +51,15 @@ body::before {
 
 /* ─── Typography utilities ──────────────────────────────────── */
 .h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.01em;
   text-transform: uppercase;
 }
 
 .h2 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1;
@@ -69,7 +69,7 @@ body::before {
 }
 
 .h3 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 600;
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   line-height: 1.2;
@@ -78,7 +78,7 @@ body::before {
 }
 
 .overline {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -91,7 +91,7 @@ body::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.1em;
@@ -135,7 +135,7 @@ body::before {
 /* Legacy compat */
 .btn-sm  { padding: 0.6rem 1.5rem; font-size: 0.875rem; }
 .btn-lg  { padding: 0.9rem 2.2rem; }
-.btn-link { font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--k-crimson); text-decoration: none; }
+.btn-link { font-family: 'IBM Plex Sans', sans-serif; font-weight: 500; color: var(--k-crimson); text-decoration: none; }
 .btn-link:hover { color: var(--k-fire); }
 
 /* ─── Section base ──────────────────────────────────────────── */
@@ -186,13 +186,13 @@ body::before {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 700;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 /* ─── Stats number ──────────────────────────────────────────── */
 .stat-num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
   font-size: clamp(2.5rem, 6vw, 4rem);
   line-height: 1;
   color: var(--k-crimson);
@@ -200,7 +200,7 @@ body::before {
 
 /* ─── Nav link ──────────────────────────────────────────────── */
 .nav-link {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 600;
   font-size: 1.05rem;
   letter-spacing: 0.08em;
@@ -239,7 +239,7 @@ body::before {
 
 /* ─── Glowing red border ─────────────────────────────────────── */
 .glow-border {
-  box-shadow: 0 0 0 1px var(--k-crimson), 0 0 24px rgba(139,32,32,0.3);
+  box-shadow: 0 0 0 1px var(--k-crimson), 0 0 24px rgba(195,33,38,0.3);
 }
 
 /* ─── Slick carousel overrides ──────────────────────────────── */
@@ -286,8 +286,8 @@ body::before {
 
 /* ─── Pulse dot ─────────────────────────────────────────────── */
 @keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(139,32,32,0.5); }
-  50%       { box-shadow: 0 0 0 8px rgba(139,32,32,0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(195,33,38,0.5); }
+  50%       { box-shadow: 0 0 0 8px rgba(195,33,38,0); }
 }
 .pulse-dot {
   display: inline-block;

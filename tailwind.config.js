@@ -2,11 +2,11 @@ module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		fontFamily: {
-			display:   "'Barlow Condensed', sans-serif",
-			body:      "'DM Sans', sans-serif",
-			primary:   "'Barlow Condensed', sans-serif",
-			secondary: "'DM Sans', sans-serif",
-			tertiary:  "'Barlow Condensed', sans-serif"
+			display:   "'IBM Plex Sans', sans-serif",
+			body:      "'IBM Plex Sans', sans-serif",
+			primary:   "'IBM Plex Sans', sans-serif",
+			secondary: "'IBM Plex Sans', sans-serif",
+			tertiary:  "'IBM Plex Sans', sans-serif"
 		},
 		container: {
 			padding: {
@@ -24,9 +24,9 @@ module.exports = {
 				primary:      "#141414",
 				surface:      "#1E1E1E",
 				surface2:     "#252525",
-				accent:       "#8B2020",
-				"accent-mid": "#A52828",
-				"accent-hi":  "#C0392B",
+				accent:       "#C32126",
+				"accent-mid": "#C32126",
+				"accent-hi":  "#A81B20",
 				muted:        "#9A9A9A",
 				light:        "#F0EDE8",
 			},
